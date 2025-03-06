@@ -124,6 +124,23 @@ async function clearExports() {
     }
 }
 
+// Toggle between light mode and dark mode
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("modeToggle");
+
+    toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Update the button text based on the current mode
+        if (document.body.classList.contains("dark-mode")) {
+            toggleButton.textContent = "Switch to Light Mode";
+        } else {
+            toggleButton.textContent = "Switch to Dark Mode";
+        }
+    });
+});
+
+
 // Attach event listeners to forms and buttons
 document.getElementById("hourlyForm").addEventListener("submit", submitHourlyData);
 document.getElementById("dailyForm").addEventListener("submit", submitDailySummary);
