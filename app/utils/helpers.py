@@ -14,8 +14,6 @@ def save_hourly_data_to_file(data: dict):
         file.write(f"{data['timestamp']},{data['flow_rate']},{data['cod']},{data['water_quality']}\n")
     print(f"Data saved to {file_path}")
 
-EXPORT_DIR = Path("./exports/intermediate")
-
 def save_hourly_data_to_csv(data: dict):
     """Save hourly data to a CSV file."""
     # Ensure the export directory exists
@@ -57,10 +55,6 @@ def save_hourly_data_to_json(data: dict):
 
     print(f"Hourly data saved to {file_path}")
     
-import toml
-from pathlib import Path
-
-EXPORT_DIR = Path("./exports/intermediate")
 
 def save_hourly_data_to_toml(data: dict):
     """
@@ -107,3 +101,11 @@ def log_export_operation(message: str):
     with open(file_path, mode="a", encoding="utf-8") as logfile:
         logfile.write(f"{message}\n")
 
+def list_export_files():
+    """
+    Returns a list of file names in the export directory.
+    """
+    if EXPORT_DIR.exists():
+        return [file.name for file in EXPORT_DIR.iterdir()]
+    else:
+        return None

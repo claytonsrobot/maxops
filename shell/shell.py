@@ -5,6 +5,11 @@ import requests
 import argparse
 import json
 
+from shell.query import run_query  # Import the tutorial function
+from shell.tutorial import run_tutorial  # Import the tutorial function
+from shell.batch_processor import process_batch  # Import batch processing function
+from shell.command_registry import register_commands  # Import command registration function
+
 # Path configuration for your project
 EXPORT_DIR = Path("./exports/intermediate")
 
@@ -16,6 +21,18 @@ class ShellApp(cmd2.Cmd):
 
     def __init__(self):
         super().__init__()
+        register_commands(self)  
+        
+    # Add the tutorial command
+    def do_tutorial(self, args):
+        """Launch the interactive tutorial to learn about the project."""
+        run_tutorial()
+        
+    # Add the query command
+    def do_query(self, args):
+        """Launch the interactive query tool to create batch scripts."""
+        run_query()
+        
 
     # === Command: Run Web App ===
     run_webapp_parser = argparse.ArgumentParser(description="Run the FastAPI web app.")
@@ -101,27 +118,14 @@ class ShellApp(cmd2.Cmd):
             print(f"Error clearing export files: {e}")
     
     # === Command: Execute Batch Script ===
-    batch_parser = argparse.ArgumentParser(description="Execute commands from a batch script file.")
-    batch_parser.add_argument("batch_file", type=str, help="Name of the batch script file in the batch directory.")
-    @cmd2.with_argparser(batch_parser)
+    # Add batch command
     def do_batch(self, args):
-        """Execute commands from a batch script file located in the batch directory."""
-        batch_file_path = BATCH_DIR / args.batch_file
-        try:
-            if not batch_file_path.exists():
-                print(f"Batch file not found: {batch_file_path}")
-                return
-
-            # Read the batch file line by line and execute each command
-            with open(batch_file_path, "r") as batch_file:
-                commands = batch_file.readlines()
-                for command in commands:
-                    command = command.strip()
-                    if command and not command.startswith("#"):
-                        print(f"Executing: {command}")
-                        self.onecmd(command)  # Execute the command in the shell context
-        except Exception as e:
-            print(f"Error executing batch script: {e}"
+        """Execute commands from a batch script located in the batch directory."""
+        batch_file_name = args.strip()
+        if not batch_file_name:
+            print("Usage: batch <batch_file_name>")
+        else:
+            process_batch(batch_file_name, self)
             
     # === Command: Test Recent Hourly Data ===
     test_recent_hourly_parser = argparse.ArgumentParser(description="Test the /api/recent-hourly endpoint.")
