@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Filler Web App</title>
+    <link rel="stylesheet" href="/static/css/styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Forms Filler Web App</h1>
+    </header>
+    <div class="container">
+        <h2>Hourly Data Entry Form</h2>
+        <form method="POST" action="/submit-hourly">
+            <!-- Timestamp -->
+            <label for="timestamp">Timestamp:</label>
+            <input type="datetime-local" id="timestamp" name="timestamp" required>
+
+            <!-- Flow Rate -->
+            <label for="flow_rate">Flow Rate:</label>
+            <input type="number" id="flow_rate" name="flow_rate" placeholder="Enter flow rate" required>
+
+            <!-- COD Value -->
+            <label for="cod">COD Value:</label>
+            <input type="number" id="cod" name="cod" placeholder="Enter COD value" required>
+
+            <!-- Water Quality -->
+            <label for="water_quality">Water Quality:</label>
+            <select id="water_quality" name="water_quality">
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Forms Filler Web App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

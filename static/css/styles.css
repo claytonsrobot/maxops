@@ -1,0 +1,153 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Dark purple background */
+    color: #d1c4e9; /* Soft lavender text */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4c2882; /* Deep pensive purple */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 2px solid #6a3c9b;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: #e0bbff; /* Light purple text for headings */
+}
+
+a {
+    text-decoration: none;
+    color: #a788e4; /* Muted purple link */
+}
+
+a:hover {
+    color: #d6b7ff; /* Slightly brighter purple link */
+    text-decoration: underline;
+}
+
+/* Layout */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #24244a; /* Slightly lighter dark purple */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #3b3b5e;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #e0bbff; /* Light purple */
+}
+
+input, select, textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #5c4d87;
+    border-radius: 8px; /* Rounded edges */
+    background-color: #3e3e63; /* Darker purple for fields */
+    color: white;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #9e79cc; /* Highlighted purple */
+    outline: none;
+    box-shadow: 0 0 5px #9e79cc;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a3c9b; /* Primary purple button */
+    border: none;
+    border-radius: 8px; /* Rounded edges */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #9e79cc; /* Brighter purple for hover */
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #5c2e77; /* Slightly darker for active state */
+    transform: translateY(1px);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #2e2e58; /* Dark purple for table background */
+    color: #d1c4e9; /* Soft text color */
+    font-size: 16px;
+    border: 1px solid #3b3b5e;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #4a4a7a;
+    text-align: left;
+}
+
+th {
+    background-color: #4c2882; /* Deep pensive purple for headers */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #383860; /* Slightly lighter row color */
+}
+
+/* Notification Styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.alert-success {
+    color: #c8e6c9;
+    background-color: #2e7d32; /* Calming green for success */
+    border-color: #1b5e20;
+}
+
+.alert-danger {
+    color: #f8d7da;
+    background-color: #b71c1c; /* Subtle red for danger */
+    border-color: #7f0000;
+}
+
+/* Footer */
+footer {
+    background-color: #24244a; /* Matches container color */
+    color: #9c9cab;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #3b3b5e;
+}
