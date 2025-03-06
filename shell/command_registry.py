@@ -1,4 +1,4 @@
-from batch_processor import process_batch
+from shell.batch_processor import process_batch
 from app.utils.helpers import list_export_files, clear_export_directory
 
 import subprocess
@@ -133,7 +133,7 @@ def tutorial(shell_instance, args):
         shell_instance: An instance of the cmd2 shell.
         args: Command-line arguments (if any).
     """
-    from tutorial import run_tutorial
+    from shell.tutorial import run_tutorial
     run_tutorial()
 
 
@@ -145,7 +145,7 @@ def query(shell_instance, args):
         shell_instance: An instance of the cmd2 shell.
         args: Command-line arguments (if any).
     """
-    from query import run_query
+    from shell.query import run_query
     run_query()
 
 

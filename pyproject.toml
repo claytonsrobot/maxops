@@ -5,6 +5,7 @@ description = "A cmd2-powered interactive shell and web app for managing batch w
 authors = ["G. Clayton Bennett <george.bennett@memphistn.gov>"]
 license = "BSD-3"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"  # Specify compatible Python versions

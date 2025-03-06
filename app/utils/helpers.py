@@ -31,7 +31,7 @@ def save_hourly_data_to_csv(data: dict):
         # Write the data
         writer.writerow([data["timestamp"], data["flow_rate"], data["cod"], data["water_quality"]])
     
-    print(f"Hourly data saved to {file_path}"
+    print(f"Hourly data saved to {file_path}")
     
 
 def save_hourly_data_to_json(data: dict):
@@ -101,11 +101,35 @@ def log_export_operation(message: str):
     with open(file_path, mode="a", encoding="utf-8") as logfile:
         logfile.write(f"{message}\n")
 
+
 def list_export_files():
     """
-    Returns a list of file names in the export directory.
+    Lists all files in the export directory.
+
+    Returns:
+        list: A list of file names in the export directory.
     """
-    if EXPORT_DIR.exists():
-        return [file.name for file in EXPORT_DIR.iterdir()]
-    else:
-        return None
+    if EXPORT_DIR.exists() and EXPORT_DIR.is_dir():
+        # Return a list of file names (not paths) in the directory
+        return [file.name for file in EXPORT_DIR.iterdir() if file.is_file()]
+    return []  # Return an empty list if the directory doesn't exist or is empty
+
+
+def clear_export_directory():
+    """
+    Clears all files in the export directory.
+
+    Returns:
+        bool: True if the files were successfully deleted, False if the directory does not exist.
+    """
+    if EXPORT_DIR.exists() and EXPORT_DIR.is_dir():
+        try:
+            # Iterate through and delete each file in the directory
+            for file in EXPORT_DIR.iterdir():
+                if file.is_file():
+                    file.unlink()  # Delete the file
+            return True  # Return True when the directory is successfully cleared
+        except Exception as e:
+            print(f"Error clearing export directory: {e}")  # Handle unexpected errors
+            return False
+    return False  # Return False if the directory does not exist
