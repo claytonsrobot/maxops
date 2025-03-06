@@ -8,7 +8,7 @@ import json
 from shell.query import run_query  # Import the tutorial function
 from shell.tutorial import run_tutorial  # Import the tutorial function
 from shell.batch_processor import process_batch  # Import batch processing function
-from shell.command_registry import register_commands  # Import command registration function
+#from shell.command_registry import register_commands  # Import command registration function
 
 # Path configuration for your project
 EXPORT_DIR = Path("./exports/intermediate")
@@ -21,7 +21,7 @@ class ShellApp(cmd2.Cmd):
 
     def __init__(self):
         super().__init__()
-        register_commands(self)  
+        #register_commands(self)  
         
     # Add the tutorial command
     def do_tutorial(self, args):
