@@ -1,0 +1,6 @@
+[[hourly_data]]
+timestamp = "2025-03-06T01:02"
+flow_rate = 1.0
+cod = 2.0
+water_quality = "good"
+
