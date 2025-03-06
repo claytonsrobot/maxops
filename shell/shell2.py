@@ -158,7 +158,25 @@ class ShellApp(cmd2.Cmd):
         """Exit the shell."""
         print("Exiting the shell. Goodbye!")
         return True
-
+        
+    # === Command: Query Guidance ===
+    query_parser = argparse.ArgumentParser(description="Run query guidance, to generate a batch script.")
+    @cmd2.with_argparser(query_parser)
+    def do_query(self, args):
+        """Exit the shell."""
+        run_query()
+        print("The query guidance is complete :)")
+        return True
+        
+    # === Command: Tutorial ===
+    tutorial_parser = argparse.ArgumentParser(description="Run tutorial, to better undestand the MaxOps program.")
+    @cmd2.with_argparser(tutorial_parser)
+    def do_tutorial(self, args):
+        """Run the tutorial."""
+        run_tutorial()
+        print("The tutorial is complete!")
+        return True
+        
 
 if __name__ == "__main__":
     ShellApp().cmdloop()
