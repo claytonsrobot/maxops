@@ -191,9 +191,9 @@ class ShellApp(cmd2.Cmd):
 
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
-    spoof_daily_parser.add_argument("date", type=str, help="Date in YYYY-MM-DD format.")
-    spoof_daily_parser.add_argument("clarifier_status", type=str, help="Clarifier status (e.g., operational, under maintenance).")
-    spoof_daily_parser.add_argument("observations", type=str, help="Daily observations.")
+    spoof_daily_parser.add_argument("-d","--date", type=str, help="Date in YYYY-MM-DD format.")
+    spoof_daily_parser.add_argument("-c","--clarifier_status", type=str, help="Clarifier status (e.g., operational, under maintenance).")
+    spoof_daily_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
@@ -203,10 +203,17 @@ class ShellApp(cmd2.Cmd):
                 "clarifier_status": args.clarifier_status,
                 "observations": args.observations
             }
-            response = requests.post("http://localhost:8000/submit-daily", data=data)
-            print(f"Server response: {response.json()}")
-        except Exception as e:
-            print(f"Error spoofing daily data: {e}")
+        except:
+            print(f"Error spoofing hourly data: {e}")
+            data = None
+            print("Args not present")
+            
+        if data is not None:
+            try:
+                response = requests.post("http://localhost:8000/submit-daily", data=data)
+                print(f"Server response: {response.json()}")
+            except Exception as e:
+                print(f"Error spoofing daily data: {e}")
 
     # === Command: List Export Files ===
     list_exports_parser = argparse.ArgumentParser(description="List files in the export directory.")
