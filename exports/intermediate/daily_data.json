@@ -8,5 +8,10 @@
         "timestamp": "2025-03-07T12:08:41",
         "clarifier_status": "spinning forwards",
         "observations": "coffee x2"
+    },
+    {
+        "timestamp": "2025-03-07T12:23:19",
+        "clarifier_status": "stopped",
+        "observations": "coffee x1"
     }
 ]

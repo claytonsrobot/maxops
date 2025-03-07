@@ -26,12 +26,25 @@ def save_data_to_csv(data: dict, file_path):
     ensure_dir()
 
     # Write or append to the CSV file
-    with open(file_path, mode="a", newline="", encoding="utf-8") as csvfile:
+    with open(file_path, mode="a+", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
         # Write the header if the file is empty
         if file_path.stat().st_size == 0:
             writer.writerow([key for key in data.keys()])
-        # Write the data
+        else:
+            
+            # check if existing headers/keys match data.keys()
+            csvfile.seek(0)
+            reader = csv.reader(csvfile)
+            try:
+                column_headers = next(reader)
+                if column_headers == list(data.keys()):
+                    print("The existing CSV column names match data.keys()")
+                else:
+                    print("WARNING: The existing CSV column names DO NOT match data.keys()")
+            except StopIteration:
+                print("ERROR: The file appears to be empty, but stat() reported otherwise.")
+                        # Write the data
         write_dict(writer, data)
     print(f"Data saved to {file_path}")
     

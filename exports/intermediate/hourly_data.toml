@@ -82,3 +82,15 @@ flow_rate = 4190.0
 cod = 99.0
 water_quality = "succeeded in modular file write, keys dictated by shell flags"
 
+[[hourly_data]]
+timestamp = "2025-03-07T12:22:28"
+flow_rate = 4190.0
+cod = 99.0
+water_quality = "succeeded in modular file write, keys dictated by shell flags"
+
+[[hourly_data]]
+timestamp = "2025-03-07T12:22:50"
+flow_rate = 4190.0
+cod = 99.0
+water_quality = "succeeded in modular file write, keys dictated by shell flags"
+

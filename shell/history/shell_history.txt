@@ -40,3 +40,10 @@ spoof_daily --timestamp now -c "spinning backwards" -o "coffee x3"
 spoof_daily --timestamp now -c "spinning forwards" -o "coffee x2"
 spoof_hourly --timestamp now --flow_rate 4190 --cod 99 --water_quality "succeeded in modular file write, keys dictated by shell flags"
 quit
+quit
+quit
+quit
+spoof_hourly --timestamp now --flow_rate 4190 --cod 99 --water_quality "succeeded in modular file write, keys dictated by shell flags"
+spoof_hourly --timestamp now --flow_rate 4190 --cod 99 --water_quality "succeeded in modular file write, keys dictated by shell flags"
+spoof_daily --timestamp now -c "stopped" -o "coffee x1"
+quit
