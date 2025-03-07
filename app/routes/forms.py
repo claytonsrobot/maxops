@@ -3,7 +3,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 
-from app.utils.helpers import save_hourly_data_to_csv,save_hourly_data_to_json,save_hourly_data_to_toml
+#from app.utils.helpers import save_hourly_data_to_csv,save_hourly_data_to_json,save_hourly_data_to_toml
+import app.utils.helpers as helpers
 
 # Initialize router and templates
 router = APIRouter()
@@ -26,9 +27,7 @@ async def submit_hourly_data(
         "cod": cod,
         "water_quality": water_quality,
     }
-    save_hourly_data_to_csv(data)
-    save_hourly_data_to_json(data)
-    save_hourly_data_to_toml(data)
+    helpers.save_hourly_data(data)
     # Process the data (you can save it to a database or log it)
     print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
     return {"message": "Hourly data submitted successfully!"}
@@ -46,9 +45,7 @@ async def submit_daily_data(
         "cod": cod,
         "water_quality": water_quality,
     }
-    save_hourly_data_to_csv(data)
-    save_hourly_data_to_json(data)
-    save_hourly_data_to_toml(data)
+    helpers.save_daily_data(data)
     # Process the data (you can save it to a database or log it)
     print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
     return {"message": "Hourly data submitted successfully!"}

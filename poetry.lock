@@ -275,6 +275,18 @@ pycodestyle = ">=2.11.0,<2.12.0"
 pyflakes = ">=3.1.0,<3.2.0"
 
 [[package]]
+name = "freesimplegui"
+version = "5.1.1"
+description = "The free-forever Python GUI framework."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "FreeSimpleGUI-5.1.1-py3-none-any.whl", hash = "sha256:d7629d5c94b55264d119bd2a89f52667d863ea7914d808e619aea29922ff842e"},
+    {file = "freesimplegui-5.1.1.tar.gz", hash = "sha256:2f0946c7ac221c997929181cbe7526e342fff5fc291a26d1d726287a5dd964fb"},
+]
+
+[[package]]
 name = "gnureadline"
 version = "8.2.13"
 description = "The standard Python readline extension statically linked against the GNU readline library."
@@ -942,4 +954,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "5498a510d6de7cf14259fb877286ee1f1440c48d0e91394858e8c31b8faebdd5"
+content-hash = "5d1a815e2ec20c9cc343b63f310cd9cbb35d420133120fbd0c8211f48885d347"

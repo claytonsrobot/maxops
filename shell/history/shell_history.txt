@@ -52,3 +52,13 @@ spoof_daily --timestamp now
 quit
 spoof_daily --timestamp now -c "stopped" -o "coffee x1"
 quit
+spoof_hourly --timestamp now --flow_rate 55 --cod 99 --water_quality "clear"
+now
+spoof_hourly --timestamp 2025-03-07T14:07:51 --flow_rate 55 --cod 99 --water_quality "clear"
+spoof_hourly --timestamp now --flow_rate 55 --cod 99 --water_quality "clear"
+spoof_hourly --timestamp now --flow_rate 55 --cod 99 --water_quality "sudsy"
+help
+run_webapp
+run_webapp
+run_webapp
+quit

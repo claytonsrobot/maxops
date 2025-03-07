@@ -94,5 +94,35 @@
         "flow_rate": 4190.0,
         "cod": 99.0,
         "water_quality": "succeeded in modular file write, keys dictated by shell flags"
+    },
+    {
+        "timestamp": "2025-03-07T14:03:19",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:07:51",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:10:06",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:55:59",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "sudsy"
+    },
+    {
+        "timestamp": "2025-03-07T21:07",
+        "flow_rate": 1.0,
+        "cod": 2.0,
+        "water_quality": "3"
     }
 ]

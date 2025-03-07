@@ -153,6 +153,53 @@ class ShellApp(cmd2.Cmd):
     spoof_hourly_parser.add_argument("-f","--flow_rate", type=float, help="Flow rate value.")
     spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
     spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
+    """
+    SAM says (three sheets in the hourly spreadsheet called Daily Data Spreashet (veriosn 1))
+    
+    Spreadsheet: Daily Data Spreashet (veriosn 1).xlsb
+    Sheets: Hourly Flow, calriier flow, daily data
+        - Hourly Flow
+        -- Underflow and Ras are not put in manually but are calculated from entried in the Clarifer flow page
+        -- Time
+        -- Flow (influent)
+        -- After wet well (flow)
+        -- TOT WAS (MGD)
+        -- 
+
+        - Clarifier Flow
+         ( requires groups and subgroups)
+        -- Adds all underflows and then calcuates RAS. Underflow minus wasting equals RAS. 
+        -- Influent flow on all aeration basins 
+        -- Influent flow on secondary clarifiers
+        -- Underflows from secondary clarifiers
+
+        - Daily Data 
+        Description: complex! partially figured from other sheet
+        
+    Spreadsheet: Maxson Hourly Effluent Flow (version 1)
+        Frequency: Once per hour
+        Future: could come from ovation automatically
+        Sheets: New sheet per month
+        Columns: Day of the month
+        Rows: Each hour
+
+    Spreadsheet: Maxson Hourly Prefinal COD Concentration 2023
+        Frequency: Once per hour
+        Future: could come from ovation automatically
+        Sheets: New sheet every months
+        Columns: Day of the month
+        Rows: Each hour
+
+    Spreadsheet: Outfall observations 2024
+        Frequency: Once per day, first shit (7am-3pm)
+        Future: Must be done manually, eyes on the outfall condition
+        Sheets: New sheet every months
+        Rows: Each Day
+        Columns: Operator initials, time, yes no questionss
+            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
+
+    """
+    
     @cmd2.with_argparser(spoof_hourly_parser)
     def do_spoof_hourly(self, args):
         """Spoof hourly data and send it to the API."""

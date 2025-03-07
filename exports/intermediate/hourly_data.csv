@@ -15,3 +15,8 @@ timestamp,flow_rate,cod,water_quality
 2025-03-07T12:09:46,4190.0,99.0,"succeeded in modular file write, keys dictated by shell flags"
 2025-03-07T12:22:28,4190.0,99.0,"succeeded in modular file write, keys dictated by shell flags"
 2025-03-07T12:22:50,4190.0,99.0,"succeeded in modular file write, keys dictated by shell flags"
+2025-03-07T14:03:19,55.0,99.0,clear
+2025-03-07T14:07:51,55.0,99.0,clear
+2025-03-07T14:10:06,55.0,99.0,clear
+2025-03-07T14:55:59,55.0,99.0,sudsy
+2025-03-07T21:07,1.0,2.0,3
