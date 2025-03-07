@@ -5,42 +5,79 @@ import toml
 
 EXPORT_DIR = Path("./exports/intermediate")
 
-def save_hourly_data_to_file(data: dict):
-    """Save hourly data to a CSV file."""
-    if not EXPORT_DIR.exists():
-        EXPORT_DIR.mkdir(parents=True)
-    file_path = EXPORT_DIR / "hourly_data.csv"
-    with open(file_path, "a") as file:
-        file.write(f"{data['timestamp']},{data['flow_rate']},{data['cod']},{data['water_quality']}\n")
-    print(f"Data saved to {file_path}")
-
-def save_hourly_data_to_csv(data: dict):
-    """Save hourly data to a CSV file."""
+def ensure_dir():
     # Ensure the export directory exists
     if not EXPORT_DIR.exists():
         EXPORT_DIR.mkdir(parents=True)
 
+def save_hourly_data(data: dict):
+    save_hourly_data_to_csv(data, file_path = EXPORT_DIR / "hourly_data.csv")
+    save_data_to_csv(data, file_path = EXPORT_DIR / "hourly_data.csv")
+    save_data_to_json(data, file_path = EXPORT_DIR / "hourly_data.json")
+    save_data_to_toml(data, file_path = EXPORT_DIR / "hourly_data.toml")
+
+def save_daily_data(data: dict):
+    #save_daily_data_to_csv(data, file_path = EXPORT_DIR / "daily_data.csv")
+    save_data_to_csv(data, file_path = EXPORT_DIR / "daily_data.csv")
+    save_data_to_json(data, file_path = EXPORT_DIR / "daily_data.json")
+    save_data_to_toml(data, file_path = EXPORT_DIR / "daily_data.toml")
+
+'''
+def save_hourly_data_to_file(data: dict):
+    """Save hourly data to a CSV file."""
+    ensure_dir()
     file_path = EXPORT_DIR / "hourly_data.csv"
+    with open(file_path, "a") as file:
+        file.write(f"{data['timestamp']},{data['flow_rate']},{data['cod']},{data['water_quality']}\n")
+    print(f"Data saved to {file_path}")
+'''
+
+def save_hourly_data_to_csv(data: dict, file_path):
+    """Save hourly data to a CSV file."""
+    ensure_dir()
 
     # Write or append to the CSV file
     with open(file_path, mode="a", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
         # Write the header if the file is empty
         if file_path.stat().st_size == 0:
-            writer.writerow(["timestamp", "flow_rate", "cod", "water_quality"])
+            writer.writerow(["timestamp", "flow_rate", "cod", "water_quality"]) # modularize to whatever is recieved
         # Write the data
-        writer.writerow([data["timestamp"], data["flow_rate"], data["cod"], data["water_quality"]])
+        if True:
+            write_dict(writer, data)
+        else:
+            writer.writerow([data["timestamp"], data["flow_rate"], data["cod"], data["water_quality"]]) # must knows explicit
     
     print(f"Hourly data saved to {file_path}")
+
+def save_data_to_csv(data: dict, file_path):
+    """Save hourly data to a CSV file."""
+    ensure_dir()
+
+    # Write or append to the CSV file
+    with open(file_path, mode="a", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+        # Write the header if the file is empty
+        if file_path.stat().st_size == 0:
+            #writer.writerow(["timestamp", "flow_rate", "cod", "water_quality"]) # modularize to whatever is recieved
+            writer.writerow([key for key in data.keys()])
+        # Write the data
+        write_dict(writer, data)
+    print(f"Data saved to {file_path}")
     
-
-def save_hourly_data_to_json(data: dict):
+def write_dict(writer, data):
+    """
+    Writes all keys and values from a dictionary to a CSV file using the writer object.
+    
+    Args:
+        writer: A csv.writer object.
+        data: A dictionary containing key-value pairs to write.
+    """
+    writer.writerow([value for key, value in data.items()])
+                     
+def save_data_to_json(data: dict, file_path):
     """Save hourly data to a JSON file."""
-    # Ensure the export directory exists
-    if not EXPORT_DIR.exists():
-        EXPORT_DIR.mkdir(parents=True)
-
-    file_path = EXPORT_DIR / "hourly_data.json"
+    ensure_dir()
 
     # Append the data to the JSON file
     if file_path.exists():
@@ -53,10 +90,10 @@ def save_hourly_data_to_json(data: dict):
         with open(file_path, mode="w", encoding="utf-8") as jsonfile:
             json.dump([data], jsonfile, indent=4)
 
-    print(f"Hourly data saved to {file_path}")
+    print(f"Data saved to {file_path}")
     
 
-def save_hourly_data_to_toml(data: dict):
+def save_data_to_toml(data: dict, file_path):
     """
     Save hourly data to a TOML file.
 
@@ -72,11 +109,8 @@ def save_hourly_data_to_toml(data: dict):
             "water_quality": "good"
         }
     """
-    # Ensure the export directory exists
-    if not EXPORT_DIR.exists():
-        EXPORT_DIR.mkdir(parents=True)
+    ensure_dir()
 
-    file_path = EXPORT_DIR / "hourly_data.toml"
 
     # Load existing data from the TOML file if it exists
     existing_data = {}
@@ -93,7 +127,7 @@ def save_hourly_data_to_toml(data: dict):
     with open(file_path, mode="w", encoding="utf-8") as tomlfile:
         toml.dump(existing_data, tomlfile)
 
-    print(f"Hourly data saved to {file_path}")
+    print(f"Data saved to {file_path}")
     
 def log_export_operation(message: str):
     """Log operations in export.log."""

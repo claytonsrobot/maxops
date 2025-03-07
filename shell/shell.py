@@ -17,7 +17,8 @@ from shell.tutorial import run_tutorial  # Import the tutorial function
 from shell.batch_processor import process_batch  # Import batch processing function
 #from shell.command_registry import register_commands  # Import command registration function
 
-from app.utils.helpers import save_hourly_data_to_csv,save_hourly_data_to_json,save_hourly_data_to_toml
+import app.utils.helpers as helpers
+#from app.utils.helpers import save_hourly_data_to_csv,save_hourly_data_to_json,save_hourly_data_to_toml, save_daily_data_to_csv,save_daily_data_to_json,save_daily_data_to_toml 
 
 
 # Path configuration for your project
@@ -185,21 +186,32 @@ class ShellApp(cmd2.Cmd):
                 print(f"Error spoofing hourly data: {e}")
                 print("Web app not running, defaulting to local export.")
 
-                save_hourly_data_to_json(data)
-                save_hourly_data_to_toml(data)
-                save_hourly_data_to_csv(data)
+                helpers.save_hourly_data(data)
+                #helpers.save_hourly_data_to_json(data)
+                #helpers.save_hourly_data_to_toml(data)
+                #helpers.save_hourly_data_to_csv(data)
 
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
-    spoof_daily_parser.add_argument("-d","--date", type=str, help="Date in YYYY-MM-DD format.")
+    spoof_daily_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
+    #spoof_daily_parser.add_argument("-d","--date", type=str, help="Date in YYYY-MM-DD format.")
     spoof_daily_parser.add_argument("-c","--clarifier_status", type=str, help="Clarifier status (e.g., operational, under maintenance).")
     spoof_daily_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
+
+        if args.timestamp == "now":
+            # overwrite
+            print("timestamp is 'now', attempting to assign..")
+            args.timestamp = self.nowtime()
+            print(f"args.timestamp assigned as {args.timestamp}")
+        else:
+            pass
+    
         try:
             data = {
-                "date": args.date,
+                "timestamp": args.timestamp,
                 "clarifier_status": args.clarifier_status,
                 "observations": args.observations
             }
@@ -207,13 +219,19 @@ class ShellApp(cmd2.Cmd):
             print(f"Error spoofing hourly data: {e}")
             data = None
             print("Args not present")
-            
+
         if data is not None:
             try:
                 response = requests.post("http://localhost:8000/submit-daily", data=data)
                 print(f"Server response: {response.json()}")
             except Exception as e:
                 print(f"Error spoofing daily data: {e}")
+                print("Web app not running, defaulting to local export.")
+
+                helpers.save_daily_data(data)
+                #helpers.save_daily_data_to_json(data)
+                #helpers.save_daily_data_to_toml(data)
+                #helpers.save_daily_data_to_csv(data)
 
     # === Command: List Export Files ===
     list_exports_parser = argparse.ArgumentParser(description="List files in the export directory.")

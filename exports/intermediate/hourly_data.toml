@@ -70,3 +70,15 @@ flow_rate = 5150.0
 cod = 1.0
 water_quality = "now-test"
 
+[[hourly_data]]
+timestamp = "2025-03-07T11:44:08"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "go work on daily"
+
+[[hourly_data]]
+timestamp = "2025-03-07T12:09:46"
+flow_rate = 4190.0
+cod = 99.0
+water_quality = "succeeded in modular file write, keys dictated by shell flags"
+

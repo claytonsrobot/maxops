@@ -1,0 +1,12 @@
+[
+    {
+        "timestamp": "2025-03-07T12:07:45",
+        "clarifier_status": "spinning backwards",
+        "observations": "coffee x3"
+    },
+    {
+        "timestamp": "2025-03-07T12:08:41",
+        "clarifier_status": "spinning forwards",
+        "observations": "coffee x2"
+    }
+]
