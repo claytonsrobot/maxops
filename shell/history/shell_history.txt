@@ -47,3 +47,8 @@ spoof_hourly --timestamp now --flow_rate 4190 --cod 99 --water_quality "succeede
 spoof_hourly --timestamp now --flow_rate 4190 --cod 99 --water_quality "succeeded in modular file write, keys dictated by shell flags"
 spoof_daily --timestamp now -c "stopped" -o "coffee x1"
 quit
+spoof_daily --timestamp now -c "stopped"
+spoof_daily --timestamp now
+quit
+spoof_daily --timestamp now -c "stopped" -o "coffee x1"
+quit

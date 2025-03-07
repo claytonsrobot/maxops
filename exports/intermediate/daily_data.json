@@ -13,5 +13,19 @@
         "timestamp": "2025-03-07T12:23:19",
         "clarifier_status": "stopped",
         "observations": "coffee x1"
+    },
+    {
+        "timestamp": "2025-03-07T12:24:04",
+        "clarifier_status": "stopped",
+        "observations": null
+    },
+    {
+        "timestamp": "2025-03-07T12:24:27",
+        "clarifier_status": null,
+        "observations": null
+    },
+    {
+        "timestamp": "2025-03-07T12:25:24",
+        "observations": "coffee x1"
     }
 ]

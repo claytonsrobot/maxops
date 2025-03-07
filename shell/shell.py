@@ -167,6 +167,7 @@ class ShellApp(cmd2.Cmd):
         
         """Capure args as data dictionary."""
         try:
+            # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             data = {
                 "timestamp": args.timestamp,
                 "flow_rate": args.flow_rate,
@@ -210,6 +211,7 @@ class ShellApp(cmd2.Cmd):
             pass
     
         try:
+            # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             data = {
                 "timestamp": args.timestamp,
                 "clarifier_status": args.clarifier_status,
