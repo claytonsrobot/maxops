@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import datetime
+import os
 
 BATCH_DIR = Path("./batch")
 
@@ -77,3 +78,4 @@ def run_query():
 
     print(f"\nBatch script saved to: {batch_file_path}")
     print("You can now run it from the shell using the batch command!")
+    return os.path.basename(batch_file_path)

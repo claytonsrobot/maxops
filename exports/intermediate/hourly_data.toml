@@ -4,3 +4,69 @@ flow_rate = 1.0
 cod = 2.0
 water_quality = "good"
 
+[[hourly_data]]
+timestamp = "2025-04-06T01:02"
+flow_rate = 0.04
+cod = 5.0
+water_quality = "1"
+
+[[hourly_data]]
+timestamp = "2025-03-07T10:56:28"
+flow_rate = 10.0
+cod = 10.0
+water_quality = "wonderous"
+
+[[hourly_data]]
+timestamp = "2025-03-07T10:56:28"
+flow_rate = 1234.0
+cod = 1234.0
+water_quality = "hello-world"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:02:43"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:10:28"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:10:28"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:12:42"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:10:28"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:10:28"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:10:28"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+
+[[hourly_data]]
+timestamp = "2025-03-07T11:32:13"
+flow_rate = 5150.0
+cod = 1.0
+water_quality = "now-test"
+

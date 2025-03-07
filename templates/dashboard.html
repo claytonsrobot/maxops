@@ -1,62 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-    <header>
-        <h1>MaxOps Web App Dashboard</h1>
-    </header>
-    <div class="container">
-        <h2>Welcome to the Dashboard</h2>
-        <p>Here you can navigate through the application, view recent submissions, and generate reports.</p>
+{% extends "base.html" %}
 
-        <!-- Summary Section -->
-        <div class="summary">
-            <h3>Recent Submissions</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Timestamp</th>
-                        <th>Flow Rate</th>
-                        <th>COD</th>
-                        <th>Water Quality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2025-03-05T08:00:00</td>
-                        <td>150.5</td>
-                        <td>40.2</td>
-                        <td>Good</td>
-                    </tr>
-                    <tr>
-                        <td>2025-03-05T09:00:00</td>
-                        <td>148.7</td>
-                        <td>39.8</td>
-                        <td>Excellent</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+{% block title %}Dashboard{% endblock %}
 
-        <!-- Navigation Links -->
-        <div class="navigation">
-            <h3>Quick Links</h3>
-            <a class="btn green" href="/daily-form">Daily Form</a>
-            <a class="btn green" href="/hourly-form">Hourly Form</a>
-            <a class="btn orange" href="/dashboard">Refresh Dashboard</a>
-        </div>
+{% block content %}
+<div class="container">
+    <h2>Welcome to the Dashboard</h2>
+    <p>Here you can navigate through the application, view recent submissions, and generate reports.</p>
 
-        <!-- Mode Toggle -->
-        <div class="toggle">
-            <button id="modeToggle" class="btn orange">Switch to Dark Mode</button>
-        </div>
+    <!-- Summary Section -->
+    <div class="summary">
+        <h3>Recent Submissions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Flow Rate</th>
+                    <th>COD</th>
+                    <th>Water Quality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-03-05T08:00:00</td>
+                    <td>150.5</td>
+                    <td>40.2</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>2025-03-05T09:00:00</td>
+                    <td>148.7</td>
+                    <td>39.8</td>
+                    <td>Excellent</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <script src="/static/js/script.js"></script>
-</body>
-</html>
+    <!-- Navigation Links -->
+    <div class="navigation">
+        <h3>Quick Links</h3>
+        <a class="btn green" href="/daily-form">Daily Form</a>
+        <a class="btn green" href="/hourly-form">Hourly Form</a>
+        <a class="btn orange" href="/dashboard">Refresh Dashboard</a>
+    </div>
+</div>
+{% endblock %}

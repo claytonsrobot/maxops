@@ -32,3 +32,23 @@ async def submit_hourly_data(
     # Process the data (you can save it to a database or log it)
     print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
     return {"message": "Hourly data submitted successfully!"}
+
+@router.post("/submit-daily")
+async def submit_daily_data(
+    timestamp: str = Form(...),
+    flow_rate: float = Form(...),
+    cod: float = Form(...),
+    water_quality: str = Form(...)
+):
+    data = {
+        "timestamp": timestamp,
+        "flow_rate": flow_rate,
+        "cod": cod,
+        "water_quality": water_quality,
+    }
+    save_hourly_data_to_csv(data)
+    save_hourly_data_to_json(data)
+    save_hourly_data_to_toml(data)
+    # Process the data (you can save it to a database or log it)
+    print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
+    return {"message": "Hourly data submitted successfully!"}

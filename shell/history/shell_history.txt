@@ -1,0 +1,32 @@
+test
+quit
+test
+history
+spoof_hourly -t 2025-03-07T11:10:28 -f 5150 -c 01 -w now-test
+history
+eval self.history
+history
+quit
+quit
+history
+test
+history
+quit
+test
+history
+history
+history
+test
+test
+history
+quit
+history
+test
+history
+spoof_hourly -t 2025-03-07T11:10:28 -f 5150 -c 01 -w now-test
+spoof_hourly -t 2025-03-07T11:10:28 -f 5150 -c 01 -w now-test
+spoof_hourly --timestamp now --flow_rate 5150 --cod 01 --water_quality now-test
+quit
+history
+git add .
+quit

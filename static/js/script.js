@@ -126,23 +126,34 @@ async function clearExports() {
 
 // Toggle between light mode and dark mode
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("modeToggle");
+    setTimeout(() => {
+        const toggleButton = document.getElementById("modeToggle");
 
-    toggleButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
 
-        // Update the button text based on the current mode
-        if (document.body.classList.contains("dark-mode")) {
-            toggleButton.textContent = "Switch to Light Mode";
-        } else {
-            toggleButton.textContent = "Switch to Dark Mode";
-        }
-    });
+            // Update the button text based on the current mode
+            if (document.body.classList.contains("dark-mode")) {
+                toggleButton.textContent = "Switch to Light Mode";
+            } else {
+                toggleButton.textContent = "Switch to Dark Mode";
+            }
+        });
+        // Auto-populate datetime-local fields with the current time
+        const datetimeFields = document.querySelectorAll('input[type="datetime-local"]');
+        const now = new Date();
+        const formattedTime = now.toISOString().slice(0, 16); // Format as YYYY-MM-DDTHH:mm
+
+        datetimeFields.forEach((field) => {
+            field.value = formattedTime;
+        });
+        },100);
+	
 });
 
 
 // Attach event listeners to forms and buttons
-document.getElementById("hourlyForm").addEventListener("submit", submitHourlyData);
-document.getElementById("dailyForm").addEventListener("submit", submitDailySummary);
-document.getElementById("listExportsButton").addEventListener("click", listExports);
-document.getElementById("clearExportsButton").addEventListener("click", clearExports);
+//document.getElementById("hourlyForm").addEventListener("submit", submitHourlyData);
+//document.getElementById("dailyForm").addEventListener("submit", submitDailySummary);
+// document.getElementById("listExportsButton").addEventListener("click", listExports);
+// document.getElementById("clearExportsButton").addEventListener("click", clearExports);

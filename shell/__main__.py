@@ -1,15 +1,16 @@
-from cmd2 import Cmd
-from shell.command_registry import register_commands
+# __main__.py
+from shell.shell import ShellApp
 
-class ShellApp(Cmd):
-    """Interactive shell for managing the web app and running batch commands."""
-
-    def __init__(self):
-        super().__init__()
-        register_commands(self)
+def cli_entry():
+    try:
+        # Launch the cmd2 terminal
+        app = ShellApp()
+        app.cmdloop()  
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
-    # Create a shell instance and start the command loop
-    shell = ShellApp()
-    shell.cmdloop()
+    cli_entry()

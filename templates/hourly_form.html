@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxOps Web App</title>
-    <link rel="stylesheet" href="/static/css/styles.css"> <!-- Link to your CSS -->
-</head>
-<body>
-    <header>
-        <h1>MaxOps Web App</h1>
-    </header>
-    <div class="container">
-        <h2>Hourly Data Entry Form</h2>
-        <form method="POST" action="/submit-hourly">
-            <!-- Timestamp -->
-            <label for="timestamp">Timestamp:</label>
-            <input type="datetime-local" id="timestamp" name="timestamp" required>
-			
-			<!-- Flow Rate -->
-            <label for="flow_rate">Flow Rate:</label>
-            <input type="number" id="flow_rate" name="flow_rate" placeholder="Enter flow rate" required>
+{% extends "base.html" %}
 
-            <!-- COD Value -->
-            <label for="cod">COD Value:</label>
-            <input type="number" id="cod" name="cod" placeholder="Enter COD value" required>
+{% block title %}Hourly Data Entry{% endblock %}
 
-            <!-- Water Quality -->
-            <label for="water_quality">Water Quality:</label>
-            <select id="water_quality" name="water_quality">
-                <option value="excellent">Excellent</option>
-                <option value="good">Good</option>
-                <option value="fair">Fair</option>
-            </select>
+{% block content %}
+<div class="container">
+    <h2>Hourly Data Entry Form</h2>
+    <form id="hourlyForm" action="/submit-hourly" method="post">
+        <label for="timestamp">Timestamp:</label>
+        <input type="datetime-local" id="timestamp" name="timestamp" required><br>
 
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <label for="flow_rate">Flow Rate:</label>
+        <input type="number" id="flow_rate" name="flow_rate" step="0.01" required><br>
 
-    <footer>
-        <p>&copy; 2025 George Clayton Bennett. All rights reserved.</p>
-    </footer>
-	<script src="/staic/js/hourly.js"></script>
-</body>
-</html>
+        <label for="cod">COD:</label>
+        <input type="number" id="cod" name="cod" step="0.01" required><br>
+
+        <label for="water_quality">Water Quality:</label>
+        <input type="text" id="water_quality" name="water_quality" required><br>
+
+        <button type="submit" class="btn green">Submit</button>
+    </form>
+</div>
+{% endblock %}
