@@ -11,6 +11,7 @@ import ast
 import operator
 import psutil
 import readline
+import FreeSimpleGUI as sg
 
 from shell.query import run_query  # Import the tutorial function
 from shell.tutorial import run_tutorial  # Import the tutorial function
@@ -46,7 +47,6 @@ class ShellApp(cmd2.Cmd):
     def __init__(self):
         super().__init__()
         self.prompt = "maxops> "
-        self.user_vars = {}  
         self.vars = {}
         self.modules = {}
         self.context = {'self': self,
@@ -57,7 +57,7 @@ class ShellApp(cmd2.Cmd):
                         'float': float,
                         'dict': dict,
                         'dir': dir,
-                        'set': set,
+                        #'set': set,
                         'tuple': tuple,
                         'len': len,
                         'sum': sum,
@@ -404,7 +404,7 @@ class ShellApp(cmd2.Cmd):
         """Evaluate an expression using stored variables."""
         try:
             expr = self._substitute_vars(args)
-            result = self._safe_eval(expr, self.context)
+            result = self._safe_eval(expr, {**self.context,**self.vars})
             self.poutput(f"{args} = {result}")
         except Exception as e:
             self.poutput(f"Error evaluating expression: {str(e)}")
@@ -456,6 +456,59 @@ class ShellApp(cmd2.Cmd):
 
         node = ast.parse(expression, mode='eval').body
         return _eval(node, context)
+    
+
+    def do_sett(self, args):
+        """Set a custom variable: set_var <name> <value>"""
+        try:
+            name, value = args.split()
+            self.vars[name] = value
+            self.poutput(f"Variable '{name}' set to '{value}'")
+        except ValueError:
+            self.perror("Usage: set_var <name> <value>")
+
+        
+    def default(self, statement):
+        """Override the default method to handle dollar sign variables."""
+        # Replace variables in the command with their values
+        command = statement.raw
+        for var_name, var_value in self.vars.items():
+            command = command.replace(f"${var_name}", var_value)
+
+        # Execute the modified command
+        #self.poutput(f"Executing command: {command}")
+        self.poutput(f"{command}")
+        # You could further process the command here if needed.
+
+    def do_gett_hold(self, args):
+
+        """Get a custom variable: gett <name>"""
+        if isinstance(args, list):
+            args = ' '.join(args)  # Convert list to a space-separated string
+        value = self.vars.get(args, None)
+        if value is not None:
+            self.poutput(f"Variable '{args}' = '{value}'")
+        else:
+            self.perror(f"Variable '{args}' not found.")
+
+    def do_gett(self, statement):
+        """Get a custom variable: gett <name>"""
+        var_name = statement.arg_list[0] if statement.arg_list else None  # Get the first argument as the variable name
+        if var_name is None:
+            self.perror("Usage: gett <name>")
+            return
+        
+        value = self.vars.get(var_name, None)
+        if value is not None:
+            self.poutput(f"Variable '{var_name}' = '{value}'")
+        else:
+            self.perror(f"Variable '{var_name}' not found.")
+
+
+    
+    def do_browsefiles(self,args):
+        file_path = sg.popup_get_file("Select a filepath to assign to variable!")
+        return file_path
 
 
 if __name__ == "__main__":

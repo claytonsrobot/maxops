@@ -62,3 +62,138 @@ run_webapp
 run_webapp
 run_webapp
 quit
+set my_variable 42
+quit
+set my_variable 42
+help
+set my_variable 42
+set
+maxops> set always_show_hint True
+set always_show_hint True
+set always_show_hint False
+set
+show
+quit
+sett t 1
+sett
+quit
+sett t 1
+sett username Alive
+quit
+sett username Alive
+quit
+sett username Alive
+quit
+eval self.vars
+quit
+sett username Alice
+gett username
+show
+$username
+echo $username
+quit
+sett username Alice
+$username
+sett bees Q
+$username+$bees
+sett a 1
+sett b 2
+$a+$b
+eval $a+$b
+eval ($a+$b)
+quit
+sett a 1
+sett b 2
+eval ($a+$b)
+eval $a
+eval (a+b)
+sett a = 1
+sett a = (1+2)
+sett a (1+2)
+sett a eval(1+2)
+quit
+sett a eval(1+2)
+sett a=eval(1+2)
+sett a=(1+2)
+quit
+sett a = (1+2)
+sett a=eval(1+2)
+eval (a+b)
+eval (a+b)
+quit
+eval 1
+sett a = (1+2)
+sett a = quit(1+2)
+quit
+sett a = (1+2)
+$a
+sett a = (1+2)
+sett a = eval(1+2)
+eval(1+2)
+quit
+eval(1+2)
+eval
+eva1 1
+sett a = (1+2)
+quit
+sett a = (1+2)
+quit
+sett a = (1+2)
+$a
+eval($a)
+eval(a)
+eval(a+1)
+quit
+sett a = (1+2)
+eval(a+1)
+eval(a)
+a
+eval($a)
+eval($a+1)
+eval a+b
+eval $a+$b
+$b=1
+$b
+sett $b=1
+eval $a+$b
+eval($a+$b)
+quit
+sett $b=1
+sett b 1
+sett b 2
+sett a 3
+gett b
+gett a
+gett b
+history
+eval($a+$b)
+eval $a+$b
+eval $a
+$a
+eval
+eval
+eval -h
+quit
+sett a 3
+sett b 1
+eval $a
+eval($a)
+$a
+sett $a
+gett $a
+gett a
+gett a
+gett b
+gett b+a
+gett(b+a)
+eval(b+a)
+eval($b+$a)
+eval($b+$a)
+$b
+quit
+sett b 1
+$b
+b
+gett b
+$b
+quit
