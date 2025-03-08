@@ -197,3 +197,41 @@ b
 gett b
 $b
 quit
+$
+$a
+sett a=1
+sett a 1
+sett a=(1)
+$a
+quit
+sett a 1
+sett a=(1)
+$a
+gett a
+eval a
+sett b=(2)
+eval a+b
+eval (a+b)
+eval ($a+$b)
+$a+$b
+quit
+sett b=(2)
+sett a=(1)
+eval ($a+$b)
+eval (a+b)
+eval ($a+b)
+sett c=($a+$b)
+eval c
+eval $c
+$c
+quit
+sett b=(2)
+sett a=(1)
+sett c=($a+$b)
+eval $c
+eval c
+quit
+batch eval.txt
+batch eval.txt
+eval ($a+$b)
+quit

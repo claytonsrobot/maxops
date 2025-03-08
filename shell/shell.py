@@ -411,8 +411,14 @@ class ShellApp(cmd2.Cmd):
 
     def _substitute_vars(self, expression):
         """Substitute variables in the expression with their values."""
-        for key, value in self.vars.items():
-            expression = expression.replace(key, value)
+        while True:
+            original_expression = expression
+            for key, value in self.vars.items():
+                expression = expression.replace(f"${key}", value)
+                expression = expression.replace(key, value)
+            # Break if no more substitutions are happening
+            if expression == original_expression:
+                break
         return expression
 
     def _safe_eval(self, expression, context):
@@ -458,7 +464,7 @@ class ShellApp(cmd2.Cmd):
         return _eval(node, context)
     
 
-    def do_sett(self, args):
+    def do_sett_hold(self, args):
         """Set a custom variable: set_var <name> <value>"""
         try:
             name, value = args.split()
@@ -466,6 +472,27 @@ class ShellApp(cmd2.Cmd):
             self.poutput(f"Variable '{name}' set to '{value}'")
         except ValueError:
             self.perror("Usage: set_var <name> <value>")
+
+    def do_sett(self, args):
+        """Set a custom variable: sett <name>=<value> or sett <name> <value>"""
+        try:
+            # Check if the input contains an equals sign
+            if '=' in args:
+                name, value = args.split('=', 1)  # Split only at the first '='
+            else:
+                name, value = args.split(maxsplit=1)  # Split by whitespace if no '='
+
+            # Optional: Handle parentheses as part of the value
+            value = value.strip()  # Remove surrounding whitespace
+            if value.startswith('(') and value.endswith(')'):
+                value = value  # Keep parentheses intact, or process as needed
+
+            self.vars[name] = value
+            self.poutput(f"Variable '{name}' set to '{value}'")
+        except ValueError:
+            self.perror("Usage: sett <name>=<value> or sett <name> <value>")
+
+    
 
         
     def default(self, statement):
