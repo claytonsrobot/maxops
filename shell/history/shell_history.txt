@@ -235,3 +235,62 @@ batch eval.txt
 batch eval.txt
 eval ($a+$b)
 quit
+help
+now
+spoof_hourly
+ii .exports\intermediate\hourly_data.toml
+ii .exports\intermediate\hourly_data.json
+os
+import os
+1
+2
+3
+4
+help
+quit
+os
+eval os
+import os
+eval os
+spoof_hourly
+quit
+spoof_hourly
+spoof_daily
+spoof_daily
+quit
+outfall
+spook_outfall
+spook_outfall
+quit
+rtrtrtr
+quit
+quit
+1
+eval
+eval 1
+eval 1p
+quit
+spoof_hourly
+spoof_hourly
+quit
+spoof_hourly
+quit
+spoof_hourly
+qui
+quit
+spoof_hourly -t 13
+spoof_hourly -t 23.5 -i 87 -e 89 -a 88 -w 1
+spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
+quit
+spoof_hourly -t 23.5 -i 87 -e 89 -a 88 -w 1
+quit
+spoof_hourly -t 23.5 -i 87 -e 89 -a 88 -w 1
+quit
+spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
+spoof_hourly -t 23.2 -i 87 -e 89 -a 88 -w 1
+spoof_hourly -t 23.2 -i 87 -e 89 -a 88 -w 1
+quit
+spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
+quit
+spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
+quit

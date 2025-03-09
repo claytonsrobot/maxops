@@ -42,6 +42,10 @@ def save_data_to_csv(data: dict, file_path):
                     print("The existing CSV column names match data.keys()")
                 else:
                     print("WARNING: The existing CSV column names DO NOT match data.keys()")
+                    print("\nKeys have changed in an existing CSV export file. \nOpen and read the relevant CSV export file. \nCheck the creation date of the fie. If possible delete the file and let a new one be generated\n")
+                    ## Write a row of the altered column names
+                    writer.writerow([key for key in data.keys()])
+
             except StopIteration:
                 print("ERROR: The file appears to be empty, but stat() reported otherwise.")
                         # Write the data
@@ -57,7 +61,7 @@ def write_dict(writer, data):
         data: A dictionary containing key-value pairs to write.
     """
     writer.writerow([value for key, value in data.items()])
-                     
+
 def save_data_to_json(data: dict, file_path):
     """Save hourly data to a JSON file."""
     ensure_dir()

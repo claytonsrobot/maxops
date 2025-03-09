@@ -11,7 +11,6 @@ import ast
 import operator
 import psutil
 import readline
-import FreeSimpleGUI as sg
 
 from shell.query import run_query  # Import the tutorial function
 from shell.tutorial import run_tutorial  # Import the tutorial function
@@ -134,6 +133,10 @@ class ShellApp(cmd2.Cmd):
         except:
             pass
 
+    # === Command: Entry ===
+    def do_entry(self,args):
+        """Generalized data entry module"""
+
     # === Command: Run Web App ===
     run_webapp_parser = argparse.ArgumentParser(description="Run the FastAPI web app.")
     @cmd2.with_argparser(run_webapp_parser)
@@ -150,9 +153,14 @@ class ShellApp(cmd2.Cmd):
     # === Command: Spoof Hourly Data ===
     spoof_hourly_parser = argparse.ArgumentParser(description="Spoof hourly data for testing.")
     spoof_hourly_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
-    spoof_hourly_parser.add_argument("-f","--flow_rate", type=float, help="Flow rate value.")
-    spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
-    spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
+    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate", type=float, help="Hourly influent flow.")
+    spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate", type=float, help="Hourly after-wet-well flow.")
+    spoof_hourly_parser.add_argument("-e","--effluent_flow_rate", type=float, help="Hourly effluent flow.")
+    #spoof_hourly_parser.add_argument("-r","--ras_flow_rate", type=float, help="Hourly RAS flow.") # calculated from entries in clarifier page
+    spoof_hourly_parser.add_argument("-w","--was_flow_rate", type=float, help="Hourly WAS flow.")
+    #spoof_hourly_parser.add_argument("-u","--underflow_rate", type=float, help="Hourly influent flow.") # calculated from entries in clarifier page
+    #spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
+    #spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
     """
     SAM says (three sheets in the hourly spreadsheet called Daily Data Spreashet (veriosn 1))
     
@@ -164,17 +172,6 @@ class ShellApp(cmd2.Cmd):
         -- Flow (influent)
         -- After wet well (flow)
         -- TOT WAS (MGD)
-        -- 
-
-        - Clarifier Flow
-         ( requires groups and subgroups)
-        -- Adds all underflows and then calcuates RAS. Underflow minus wasting equals RAS. 
-        -- Influent flow on all aeration basins 
-        -- Influent flow on secondary clarifiers
-        -- Underflows from secondary clarifiers
-
-        - Daily Data 
-        Description: complex! partially figured from other sheet
         
     Spreadsheet: Maxson Hourly Effluent Flow (version 1)
         Frequency: Once per hour
@@ -190,36 +187,40 @@ class ShellApp(cmd2.Cmd):
         Columns: Day of the month
         Rows: Each hour
 
-    Spreadsheet: Outfall observations 2024
-        Frequency: Once per day, first shit (7am-3pm)
-        Future: Must be done manually, eyes on the outfall condition
-        Sheets: New sheet every months
-        Rows: Each Day
-        Columns: Operator initials, time, yes no questionss
-            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
+        - Clarifier Flow
+         ( requires groups and subgroups)
+        -- Adds all underflows and then calcuates RAS. Underflow minus wasting equals RAS. 
+        -- Influent flow on all aeration basins 
+        -- Influent flow on secondary clarifiers
+        -- Underflows from secondary clarifiers
+
+        - Daily Data 
+        Description: complex! partially figured from other sheet
+        
 
     """
     
     @cmd2.with_argparser(spoof_hourly_parser)
     def do_spoof_hourly(self, args):
         """Spoof hourly data and send it to the API."""
-
-        if args.timestamp == "now":
-            # overwrite
-            print("timestamp is 'now', attempting to assign..")
-            args.timestamp = self.nowtime()
-            print(f"args.timestamp assigned as {args.timestamp}")
-        else:
-            pass
+        print(f"args.timestamp = {args.timestamp}")
+        args.timestamp = self._sanitize_time(args.timestamp)
         
         """Capure args as data dictionary."""
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
+            #data = {
+            #    "timestamp": args.timestamp,
+            #    "flow_rate": args.flow_rate,
+            #    "cod": args.cod,
+            #    "water_quality": args.water_quality
+            #}
             data = {
-                "timestamp": args.timestamp,
-                "flow_rate": args.flow_rate,
-                "cod": args.cod,
-                "water_quality": args.water_quality
+                "timestamp":args.timestamp,
+                "inluent_flow_rate":args.inluent_flow_rate,
+                "after_wet_well_flow_rate":args.after_wet_well_flow_rate,
+                "effluent_flow_rate":args.effluent_flow_rate,
+                "was_flow_rate":args.was_flow_rate
             }
         except:
             print(f"Error spoofing hourly data: {e}")
@@ -239,6 +240,44 @@ class ShellApp(cmd2.Cmd):
                 #helpers.save_hourly_data_to_toml(data)
                 #helpers.save_hourly_data_to_csv(data)
 
+    def time_hour_explicit(self,timestamp):
+        if str(timestamp).isnumeric() and int(timestamp)<=24:
+            # Assume today. Convert time to a rounded hour
+            hh= int(timestamp)
+            #now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+            now = datetime.now()
+            time_hour = datetime(year = now.year,
+                                    month = now.month,
+                                    day = now.day,
+                                    hour = hh,
+                                    minute = 0,
+                                    second = 0).strftime("%Y-%m-%dT%H:%M:%S")
+            
+            return time_hour
+        else:
+            return False
+        
+    # === Command: Sanitize Time ===
+    def _sanitize_time(self,timestamp):
+        print(f"timestamp = {timestamp}")
+        print(f"str(timestamp) is {str(timestamp)}")
+        print(f"float(timestamp) is {float(timestamp)}")
+        print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
+        if timestamp == "now" or timestamp is None:
+            # overwrite
+            print("timestamp is 'now', attempting to assign..")
+            return self.nowtime()
+            print(f"timestamp assigned as {timestamp}")
+
+        elif str(timestamp).isnumeric():
+            #print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
+            # Assume today convert time to a rounded hour
+            if int(timestamp)<=24:
+                return self.time_hour_explicit(timestamp)
+        else:
+            pass
+    
+    
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
     spoof_daily_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
@@ -248,15 +287,17 @@ class ShellApp(cmd2.Cmd):
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
+        args.timestamp = self._sanitize_time(args.timestamp)
+        """
+        Spreadsheet: Outfall observations 2024
+        Frequency: Once per day, first shit (7am-3pm)
+        Future: Must be done manually, eyes on the outfall condition
+        Sheets: New sheet every months
+        Rows: Each Day
+        Columns: Operator initials, time, yes no questionss
+            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
+        """
 
-        if args.timestamp == "now":
-            # overwrite
-            print("timestamp is 'now', attempting to assign..")
-            args.timestamp = self.nowtime()
-            print(f"args.timestamp assigned as {args.timestamp}")
-        else:
-            pass
-    
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             data = {
@@ -282,6 +323,25 @@ class ShellApp(cmd2.Cmd):
                 #helpers.save_daily_data_to_toml(data)
                 #helpers.save_daily_data_to_csv(data)
 
+    # === Command: Outfall Data Entry ===
+    arglist = list(["safe to make observation",
+        "flotable present",
+        "scum present",
+        "foam present",
+        "oil present"])
+    outfall_parser = argparse.ArgumentParser(description= "Outfall data entry.")
+    outfall_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
+    outfall_parser.add_argument("-y","--safe_to_make_observation", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-float","--flotable_present", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-scum","--scum_present", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-foam","--foam_present", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-oil","--oil_present", type=int, help="Outfall observation, yes[1] or no[0].")
+    
+
+    @cmd2.with_argparser(outfall_parser)
+    def do_spoof_outfall(self,args):
+        pass
+    
     # === Command: List Export Files ===
     list_exports_parser = argparse.ArgumentParser(description="List files in the export directory.")
     @cmd2.with_argparser(list_exports_parser)
@@ -382,6 +442,7 @@ class ShellApp(cmd2.Cmd):
         #print(f"{now_time}")
         self.poutput(f"{now_time}")
         #return None
+
     def nowtime(self):
         now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         return now_time
@@ -404,7 +465,8 @@ class ShellApp(cmd2.Cmd):
         """Evaluate an expression using stored variables."""
         try:
             expr = self._substitute_vars(args)
-            result = self._safe_eval(expr, {**self.context,**self.vars})
+            #result = self._safe_eval(expr, {**self.context,**self.vars})
+            result = self._safe_eval(expr, self.context)
             self.poutput(f"{args} = {result}")
         except Exception as e:
             self.poutput(f"Error evaluating expression: {str(e)}")
@@ -534,6 +596,7 @@ class ShellApp(cmd2.Cmd):
 
     
     def do_browsefiles(self,args):
+        import FreeSimpleGUI as sg
         file_path = sg.popup_get_file("Select a filepath to assign to variable!")
         return file_path
 

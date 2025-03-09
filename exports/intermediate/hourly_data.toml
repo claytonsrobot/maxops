@@ -124,3 +124,77 @@ flow_rate = 1.0
 cod = 2.0
 water_quality = "3"
 
+[[hourly_data]]
+
+[[hourly_data]]
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:12:34"
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:15:44"
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:16:38"
+
+[[hourly_data]]
+timestamp = "2025-03-08T13:00:00"
+
+[[hourly_data]]
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:00:00"
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:00:00"
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:00:00"
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
+[[hourly_data]]
+timestamp = "2025-03-08T23:00:00"
+inluent_flow_rate = 87.0
+after_wet_well_flow_rate = 88.0
+effluent_flow_rate = 89.0
+was_flow_rate = 1.0
+
