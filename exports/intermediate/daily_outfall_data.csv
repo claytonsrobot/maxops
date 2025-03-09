@@ -1,0 +1,8 @@
+timestamp,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
+2025-03-09T16:24:06,1,1,1,1,0
+timestamp_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
+2025-03-09T16:44:49,1,1,1,1,0
+timestamp_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
+2025-03-09T16:54:26,1,1,0,0,
+timestamp_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
+2025-03-09T16:56:46,1,1,0,0,1

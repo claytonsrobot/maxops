@@ -1,0 +1,31 @@
+[[hourly_data]]
+timestamp = "2025-03-09T16:24:06"
+safe_to_make_observation = "1"
+flotable_present = "1"
+scum_present = "1"
+foam_present = "1"
+oil_present = 0
+
+[[hourly_data]]
+timestamp_ISO = "2025-03-09T16:44:49"
+safe_to_make_observation = "1"
+flotable_present = "1"
+scum_present = "1"
+foam_present = "1"
+oil_present = 0
+
+[[hourly_data]]
+timestamp_ISO = "2025-03-09T16:54:26"
+safe_to_make_observation = "1"
+flotable_present = "1"
+scum_present = "0"
+foam_present = "0"
+
+[[hourly_data]]
+timestamp_ISO = "2025-03-09T16:56:46"
+safe_to_make_observation = "1"
+flotable_present = "1"
+scum_present = "0"
+foam_present = "0"
+oil_present = 1
+

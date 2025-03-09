@@ -20,6 +20,11 @@ def save_daily_data(data: dict):
     save_data_to_json(data, file_path = EXPORT_DIR / "daily_data.json")
     save_data_to_toml(data, file_path = EXPORT_DIR / "daily_data.toml")
 
+def save_outfall_data(data: dict):
+    save_data_to_csv(data, file_path = EXPORT_DIR / "daily_outfall_data.csv")
+    save_data_to_json(data, file_path = EXPORT_DIR / "daily_outfall_data.json")
+    save_data_to_toml(data, file_path = EXPORT_DIR / "daily_outfall_data.toml")
+
 def save_data_to_csv(data: dict, file_path):
     """Save hourly data to a CSV file."""
     ensure_dir()
@@ -96,8 +101,6 @@ def save_data_to_toml(data: dict, file_path):
         }
     """
     ensure_dir()
-
-
     # Load existing data from the TOML file if it exists
     existing_data = {}
     if file_path.exists():

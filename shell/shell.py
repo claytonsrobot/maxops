@@ -203,20 +203,27 @@ class ShellApp(cmd2.Cmd):
     @cmd2.with_argparser(spoof_hourly_parser)
     def do_spoof_hourly(self, args):
         """Spoof hourly data and send it to the API."""
-        print(f"args.timestamp = {args.timestamp}")
+
+        # Print help if no args are provided
+        keys_to_remove = ['cmd2_statement', 'cmd2_handler']
+        args_dict = {key: value for key, value in vars(args).items() if key not in keys_to_remove}
+        if all(value is None for value in args_dict.values()):
+            self.do_spoof_hourly("--help")
+            return
+        
         args.timestamp = self._sanitize_time(args.timestamp)
         
         """Capure args as data dictionary."""
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             #data = {
-            #    "timestamp": args.timestamp,
+            #    "timestamp_ISO": args.timestamp,
             #    "flow_rate": args.flow_rate,
             #    "cod": args.cod,
             #    "water_quality": args.water_quality
             #}
             data = {
-                "timestamp":args.timestamp,
+                "timestamp_ISO":args.timestamp,
                 "inluent_flow_rate_MGD":args.inluent_flow_rate_MGD,
                 "after_wet_well_flow_rate_MGD":args.after_wet_well_flow_rate_MGD,
                 "effluent_flow_rate_MGD":args.effluent_flow_rate_MGD,
@@ -236,9 +243,8 @@ class ShellApp(cmd2.Cmd):
                 print("Web app not running, defaulting to local export.")
 
                 helpers.save_hourly_data(data)
-                #helpers.save_hourly_data_to_json(data)
-                #helpers.save_hourly_data_to_toml(data)
-                #helpers.save_hourly_data_to_csv(data)
+        else:
+            self.do_spoof_hourly("--help")
 
     def time_hour_explicit(self,hour_int):
         if hour_int<=24:
@@ -297,21 +303,21 @@ class ShellApp(cmd2.Cmd):
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
+
+        # Print help if no args are provided
+        keys_to_remove = ['cmd2_statement', 'cmd2_handler']
+        args_dict = {key: value for key, value in vars(args).items() if key not in keys_to_remove}
+        if all(value is None for value in args_dict.values()):
+            self.do_spoof_daily("--help")
+            return
+        
+
         args.timestamp = self._sanitize_time(args.timestamp)
-        """
-        Spreadsheet: Outfall observations 2024
-        Frequency: Once per day, first shit (7am-3pm)
-        Future: Must be done manually, eyes on the outfall condition
-        Sheets: New sheet every months
-        Rows: Each Day
-        Columns: Operator initials, time, yes no questionss
-            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
-        """
 
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             data = {
-                "timestamp": args.timestamp,
+                "timestamp_ISO": args.timestamp,
                 "clarifier_status": args.clarifier_status,
                 "observations": args.observations
             }
@@ -329,9 +335,6 @@ class ShellApp(cmd2.Cmd):
                 print("Web app not running, defaulting to local export.")
 
                 helpers.save_daily_data(data)
-                #helpers.save_daily_data_to_json(data)
-                #helpers.save_daily_data_to_toml(data)
-                #helpers.save_daily_data_to_csv(data)
 
     # === Command: Outfall Data Entry ===
     arglist = list(["safe to make observation",
@@ -340,8 +343,8 @@ class ShellApp(cmd2.Cmd):
         "foam present",
         "oil present"])
     outfall_parser = argparse.ArgumentParser(description= "Outfall data entry.")
-    outfall_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
-    outfall_parser.add_argument("-y","--safe_to_make_observation", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
+    outfall_parser.add_argument("-safe","--safe_to_make_observation", help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-float","--flotable_present", help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-scum","--scum_present", help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-foam","--foam_present", help="Outfall observation, yes[1] or no[0].")
@@ -349,8 +352,52 @@ class ShellApp(cmd2.Cmd):
     
 
     @cmd2.with_argparser(outfall_parser)
-    def do_spoof_outfall(self,args):
-        pass
+    def do_spoof_outfall_daily(self,args):
+        """Spoof outfall daily data and send it to the API."""
+
+        # Print help if no args are provided
+        keys_to_remove = ['cmd2_statement', 'cmd2_handler']
+        args_dict = {key: value for key, value in vars(args).items() if key not in keys_to_remove}
+        if all(value is None for value in args_dict.values()):
+            self.do_spoof_outfall_daily("--help")
+            return
+        
+        args.timestamp = self._sanitize_time(args.timestamp)
+        """
+        Spreadsheet: Outfall observations 2024
+        Frequency: Once per day, first shit (7am-3pm)
+        Future: Must be done manually, eyes on the outfall condition
+        Sheets: New sheet every months
+        Rows: Each Day
+        Columns: Operator initials, time, yes no questionss
+            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
+        """
+
+        try:
+            # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
+
+            data = {
+                "timestamp_ISO": args.timestamp,
+                "safe_to_make_observation": args.safe_to_make_observation,
+                "flotable_present": args.flotable_present,
+                "scum_present": args.scum_present,
+                "foam_present": args.foam_present,
+                "oil_present": args.oil_present
+            }            
+        except Exception as e:
+            print(f"Error spoofing outfall data: {e}")
+            data = None
+            print("Args not present")
+
+        if data is not None:
+            try:
+                response = requests.post("http://localhost:8000/submit-daily", data=data)
+                print(f"Server response: {response.json()}")
+            except Exception as e:
+                print(f"Error spoofing daily data: {e}")
+                print("Web app not running, defaulting to local export.")
+
+                helpers.save_outfall_data(data)
     
     # === Command: List Export Files ===
     list_exports_parser = argparse.ArgumentParser(description="List files in the export directory.")
