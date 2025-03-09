@@ -344,10 +344,10 @@ class ShellApp(cmd2.Cmd):
         "oil present"])
     outfall_parser = argparse.ArgumentParser(description= "Outfall data entry.")
     outfall_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
-    outfall_parser.add_argument("-safe","--safe_to_make_observation", help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-float","--flotable_present", help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-scum","--scum_present", help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-foam","--foam_present", help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-safe","--safe_to_make_observation", type=int, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-float","--flotable_present", type=int, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-scum","--scum_present", type=int, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-foam","--foam_present", type=int, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-oil","--oil_present", type=int, help="Outfall observation, yes[1] or no[0].")
     
 
