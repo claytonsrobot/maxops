@@ -20,7 +20,6 @@ def save_daily_data(data: dict):
     save_data_to_json(data, file_path = EXPORT_DIR / "daily_data.json")
     save_data_to_toml(data, file_path = EXPORT_DIR / "daily_data.toml")
 
-
 def save_data_to_csv(data: dict, file_path):
     """Save hourly data to a CSV file."""
     ensure_dir()
