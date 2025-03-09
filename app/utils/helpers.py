@@ -40,8 +40,8 @@ def save_data_to_csv(data: dict, file_path):
                 if column_headers == list(data.keys()):
                     print("The existing CSV column names match data.keys()")
                 else:
-                    print("WARNING: The existing CSV column names DO NOT match data.keys()")
-                    print("\nKeys have changed in an existing CSV export file. \nOpen and read the relevant CSV export file. \nCheck the creation date of the fie. If possible delete the file and let a new one be generated\n")
+                    print("\nWARNING: The existing CSV column names DO NOT match data.keys()")
+                    print("\n\tKeys have changed in an existing CSV export file. \n\tOpen and read the relevant CSV export file. \n\tCheck the creation date of the file. \n\tIf possible delete the file and let a new one be generated\n")
                     ## Write a row of the altered column names
                     writer.writerow([key for key in data.keys()])
 

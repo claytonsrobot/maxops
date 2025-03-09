@@ -294,3 +294,72 @@ spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
 quit
 spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
 quit
+spoof_hourly -t 23 -i 87 -e 89 -a 88 -w 1
+int(24.5)
+evalint(24.5)
+eval int(24.5)
+eval str(24.5).isnumeric()
+eval str(24).isnumeric()
+eval int(24.5).isnumeric()
+eval int(24.5).isnumeric()
+eval str(round(24.5,0).isnumeric()
+eval str(round(24.5,0)).isnumeric()
+eval round(24.5,0))
+eval round(24.5,0)
+eval int(round(24.5,0))
+eval str(round(24.5,0)).isdemical()
+eval round(24.5,0).isdemical()
+eval str(round(24.5,0)).isdecimal()
+eval str(round(24.5,1)).isdecimal()
+eval round(24.5,0).isnumeric()
+spoof_hourly -t 1 -i 45 -e 55 -a 77 -w 1
+now
+now
+iso_format = now.strftime("%Y-%m-%dT%H:%M:%S")
+eval iso_format = now.strftime("%Y-%m-%dT%H:%M:%S")
+eval (now).strftime("%Y-%m-%dT%H:%M:%S")
+eval (2025-03-09T15:31:39).strftime("%Y-%m-%dT%H:%M:%S")
+eval (str(2025-03-09T15:31:39)).strftime("%Y-%m-%dT%H:%M:%S")
+eval datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S").strftime(
+eval datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%dT%H:%M:%S")
+import datetime
+now
+eval now
+quit
+quit
+quit
+spoof_hourly -t 1 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 1 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 1 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 1 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13 -i 45 -e 55 -a 77 -w 1
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13 -i 45 -e 55 -a 77 -w 1
+quit
+spoof_hourly -t 13 -i 45 -e 55 -a 77 -w 1
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+eval int(13.5)
+int("13.5")
+eval int("13.5")
+eval int(float("13.5"))
+eval int(float("#we2"))
+eval int(float("#w2"))
+eval int(float("#2"))
+eval int(float("2"))
+eval int(float("we"))
+eval int(float("w"))
+quit
+spoof_hourly -t 13.5 -i 45 -e 55 -a 77 -w 1
+qui
+quit

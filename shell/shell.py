@@ -152,13 +152,13 @@ class ShellApp(cmd2.Cmd):
 
     # === Command: Spoof Hourly Data ===
     spoof_hourly_parser = argparse.ArgumentParser(description="Spoof hourly data for testing.")
-    spoof_hourly_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
-    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate", type=float, help="Hourly influent flow.")
-    spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate", type=float, help="Hourly after-wet-well flow.")
-    spoof_hourly_parser.add_argument("-e","--effluent_flow_rate", type=float, help="Hourly effluent flow.")
-    #spoof_hourly_parser.add_argument("-r","--ras_flow_rate", type=float, help="Hourly RAS flow.") # calculated from entries in clarifier page
-    spoof_hourly_parser.add_argument("-w","--was_flow_rate", type=float, help="Hourly WAS flow.")
-    #spoof_hourly_parser.add_argument("-u","--underflow_rate", type=float, help="Hourly influent flow.") # calculated from entries in clarifier page
+    spoof_hourly_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00. It you use '-t now', or don't include one, the ISO timestamp for now will be generated. If you use '-t 13', the time will be submitted as today at 1 PM,  for example; this input must be an integrer.")
+    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate_MGD", type=float, help="Hourly influent flow.")
+    spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate_MGD", type=float, help="Hourly after-wet-well flow.")
+    spoof_hourly_parser.add_argument("-e","--effluent_flow_rate_MGD", type=float, help="Hourly effluent flow.")
+    #spoof_hourly_parser.add_argument("-r","--ras_flow_rate_MGD", type=float, help="Hourly RAS flow.") # calculated from entries in clarifier page
+    spoof_hourly_parser.add_argument("-w","--was_flow_rate_MGD", type=float, help="Hourly WAS flow.")
+    #spoof_hourly_parser.add_argument("-u","--underflow_rate_MGD", type=float, help="Hourly influent flow.") # calculated from entries in clarifier page
     #spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
     #spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
     """
@@ -217,12 +217,12 @@ class ShellApp(cmd2.Cmd):
             #}
             data = {
                 "timestamp":args.timestamp,
-                "inluent_flow_rate":args.inluent_flow_rate,
-                "after_wet_well_flow_rate":args.after_wet_well_flow_rate,
-                "effluent_flow_rate":args.effluent_flow_rate,
-                "was_flow_rate":args.was_flow_rate
+                "inluent_flow_rate_MGD":args.inluent_flow_rate_MGD,
+                "after_wet_well_flow_rate_MGD":args.after_wet_well_flow_rate_MGD,
+                "effluent_flow_rate_MGD":args.effluent_flow_rate_MGD,
+                "was_flow_rate_MGD":args.was_flow_rate_MGD
             }
-        except:
+        except Exception as e:
             print(f"Error spoofing hourly data: {e}")
             data = None
             print("Args not present")
@@ -240,43 +240,53 @@ class ShellApp(cmd2.Cmd):
                 #helpers.save_hourly_data_to_toml(data)
                 #helpers.save_hourly_data_to_csv(data)
 
-    def time_hour_explicit(self,timestamp):
-        if str(timestamp).isnumeric() and int(timestamp)<=24:
+    def time_hour_explicit(self,hour_int):
+        if hour_int<=24:
             # Assume today. Convert time to a rounded hour
-            hh= int(timestamp)
             #now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
             now = datetime.now()
-            time_hour = datetime(year = now.year,
+            timestamp = datetime(year = now.year,
                                     month = now.month,
                                     day = now.day,
-                                    hour = hh,
+                                    hour = hour_int,
                                     minute = 0,
                                     second = 0).strftime("%Y-%m-%dT%H:%M:%S")
             
-            return time_hour
+            return timestamp
         else:
             return False
         
     # === Command: Sanitize Time ===
     def _sanitize_time(self,timestamp):
         print(f"timestamp = {timestamp}")
-        print(f"str(timestamp) is {str(timestamp)}")
-        print(f"float(timestamp) is {float(timestamp)}")
-        print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
-        if timestamp == "now" or timestamp is None:
+        #print(f"str(timestamp) is {str(timestamp)}")
+        #print(f"float(timestamp) is {float(timestamp)}")
+        #print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
+
+        try:
+            # Check if the formatted string is already ISO 8601
+            # Parse the string back to a datetime object to validate it
+            datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S")
+            iso8601 = True
+        except:
+            iso8601 = False
+
+        if iso8601:
+            return timestamp
+        elif timestamp == "now" or timestamp is None:
             # overwrite
             print("timestamp is 'now', attempting to assign..")
-            return self.nowtime()
             print(f"timestamp assigned as {timestamp}")
-
-        elif str(timestamp).isnumeric():
-            #print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
-            # Assume today convert time to a rounded hour
-            if int(timestamp)<=24:
-                return self.time_hour_explicit(timestamp)
-        else:
-            pass
-    
+            return self.nowtime()
+        
+        else: 
+            try:
+                # convert string from args.timestamp to an integer
+                # This will fail is there are non-numeric characters in the string.
+                return self.time_hour_explicit(int(float(timestamp))) 
+            except Exception as e:
+                print(f"A legimate time value was not offered. Null used: {e}")
+            
     
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
@@ -305,7 +315,7 @@ class ShellApp(cmd2.Cmd):
                 "clarifier_status": args.clarifier_status,
                 "observations": args.observations
             }
-        except:
+        except Exception as e:
             print(f"Error spoofing hourly data: {e}")
             data = None
             print("Args not present")
@@ -446,7 +456,7 @@ class ShellApp(cmd2.Cmd):
     def nowtime(self):
         now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         return now_time
-
+    
 
     # === Command: print ===
     def do_print(self, args):
