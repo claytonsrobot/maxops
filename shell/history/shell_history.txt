@@ -473,3 +473,8 @@ $c
 eval $c
 gui
 quit
+runserver
+gui
+quit
+gui
+quit

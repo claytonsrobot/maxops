@@ -1,3 +1,4 @@
+import requests
 import FreeSimpleGUI as sg
 import app.utils.helpers as helpers
 
@@ -31,12 +32,23 @@ def hourly_window():
                     "was_flow_rate_MGD": float(values["was_flow_rate_MGD"]),
                     "operator": values["operator"]
                 }
-                helpers.save_hourly_data(data)
-                sg.Popup("Hourly data saved successfully!")
+                
             except Exception as e:
                 print(f"Error saving hourly data: {e}")
                 sg.PopupError(f"Failed to save data: {e}")
-        
+                data = None
+                
+            if data is not None:
+                try:
+                    response = requests.post("http://localhost:8000/submit-hourly", data=data)
+                    print(f"Server response: {response.json()}")
+                except Exception as e:
+                    print(f"Error spoofing hourly data: {e}")
+                    print("Web app not running, defaulting to local export.")
+
+                    helpers.save_hourly_data(data)
+                    sg.Popup("Hourly data saved successfully!")
+            
     window.close()
 
 if __name__ == "__main__":

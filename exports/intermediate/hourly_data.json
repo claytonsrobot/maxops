@@ -16,5 +16,23 @@
         "effluent_flow_rate_MGD": 84.0,
         "was_flow_rate_MGD": 1.5,
         "operator": "Henry Lee Clark"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T01:19:18",
+        "timestamp_intended_ISO": "2025-03-10T01:19:14",
+        "inluent_flow_rate_MGD": 0.0,
+        "after_wet_well_flow_rate_MGD": 0.0,
+        "effluent_flow_rate_MGD": 0.0,
+        "was_flow_rate_MGD": 0.0,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T01:20:25",
+        "timestamp_intended_ISO": "2025-03-10T01:20:23",
+        "inluent_flow_rate_MGD": 0.0,
+        "after_wet_well_flow_rate_MGD": 0.0,
+        "effluent_flow_rate_MGD": 0.0,
+        "was_flow_rate_MGD": 0.0,
+        "operator": "Clayton Bennett"
     }
 ]

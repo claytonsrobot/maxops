@@ -242,8 +242,6 @@ class ShellApp(cmd2.Cmd):
                 print("Web app not running, defaulting to local export.")
 
                 helpers.save_hourly_data(data)
-        else:
-            self.do_spoof_hourly("--help")
 
 
     # === Command: Spoof Daily Data ===

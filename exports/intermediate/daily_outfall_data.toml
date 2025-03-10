@@ -38,3 +38,13 @@ foam_present = true
 oil_present = true
 operator = "Glady Nakayama"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T01:18:55"
+timestamp_intended_ISO = "2025-03-10T01:18:53"
+safe_to_make_observation = true
+flotable_present = true
+scum_present = false
+foam_present = false
+oil_present = true
+operator = "Clayton Bennett"
+

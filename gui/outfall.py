@@ -1,3 +1,4 @@
+import requests
 import FreeSimpleGUI as sg
 import app.utils.helpers as helpers
 
@@ -35,11 +36,22 @@ def outfall_window():
                 "oil_present": values["oil_present"],
                 "operator": values["operator"]
             }
-            helpers.save_outfall_data(data)
-            sg.Popup("Data saved successfully!")
+
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
             data = None
+            sg.PopupError(f"Failed to save data: {e}")
+
+        if data is not None:
+            try:
+                response = requests.post("http://localhost:8000/submit-outfall", data=data)
+                print(f"Server response: {response.json()}")
+            except Exception as e:
+                print(f"Error spoofing daily data: {e}")
+                print("Web app not running, defaulting to local export.")
+
+                helpers.save_outfall_data(data)
+                sg.Popup("Data saved successfully!")
     window.close()
 
 if __name__ == "__main__":
