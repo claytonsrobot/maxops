@@ -34,5 +34,85 @@
         "effluent_flow_rate_MGD": 0.0,
         "was_flow_rate_MGD": 0.0,
         "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:32:41",
+        "timestamp_intended_ISO": "2025-03-10T12:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 50.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett",
+        "source": "web-post-Python-uvicorn"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:34:34",
+        "timestamp_intended_ISO": "2025-03-10T13:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 99.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Henry Winkler",
+        "source": "web-post-Python-uvicorn"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:36:43",
+        "timestamp_intended_ISO": "2025-03-10T13:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 99.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Batch Eval",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:36:53",
+        "timestamp_intended_ISO": "2025-03-10T13:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 99.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Batch Eval",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:38:36",
+        "timestamp_intended_ISO": "2025-03-10T12:38:36",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T12:38:41",
+        "timestamp_intended_ISO": "2025-03-10T13:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 99.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Batch Eval",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T13:05:24",
+        "timestamp_intended_ISO": "2025-03-10T13:05:24",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T13:05:28",
+        "timestamp_intended_ISO": "2025-03-10T13:00:00",
+        "inluent_flow_rate_MGD": 100.0,
+        "after_wet_well_flow_rate_MGD": 99.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Batch Eval",
+        "source": "web-post-Python-FastAPI"
     }
 ]

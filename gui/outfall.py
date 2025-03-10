@@ -34,7 +34,8 @@ def outfall_window():
                 "scum_present": values["scum_present"],
                 "foam_present": values["foam_present"],
                 "oil_present": values["oil_present"],
-                "operator": values["operator"]
+                "operator": values["operator"],
+                "source": "local-gui-Python-FreeSimpleGUI"
             }
 
         except Exception as e:

@@ -151,7 +151,7 @@ class ShellApp(cmd2.Cmd):
     # === Command: Spoof Hourly Data ===
     spoof_hourly_parser = argparse.ArgumentParser(description="Spoof hourly data for testing.")
     spoof_hourly_parser.add_argument("-t","--timestamp", type=str, default=None, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00. It you use '-t now', or don't include one, the ISO timestamp for now will be generated. If you use '-t 13', the time will be submitted as today at 1 PM,  for example; this input must be an integrer.")
-    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate_MGD", type=float, default=None, help="Hourly influent flow.")
+    spoof_hourly_parser.add_argument("-i","--influent_flow_rate_MGD", type=float, default=None, help="Hourly influent flow.")
     spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate_MGD", type=float, default=None, help="Hourly after-wet-well flow.")
     spoof_hourly_parser.add_argument("-e","--effluent_flow_rate_MGD", type=float, default=None, help="Hourly effluent flow.")
     #spoof_hourly_parser.add_argument("-r","--ras_flow_rate_MGD", type=float, default=None, help="Hourly RAS flow.") # calculated from entries in clarifier page
@@ -213,20 +213,16 @@ class ShellApp(cmd2.Cmd):
         """Capure args as data dictionary."""
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
-            #data = {
-            #    "timestamp_ISO": args.timestamp,
-            #    "flow_rate": args.flow_rate,
-            #    "cod": args.cod,
-            #    "water_quality": args.water_quality
-            #}
             data = {
                 "timestamp_entry_ISO": helpers.nowtime(),
                 "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
-                "inluent_flow_rate_MGD":args.inluent_flow_rate_MGD,
+
+                "influent_flow_rate_MGD":args.influent_flow_rate_MGD,
                 "after_wet_well_flow_rate_MGD":args.after_wet_well_flow_rate_MGD,
                 "effluent_flow_rate_MGD":args.effluent_flow_rate_MGD,
                 "was_flow_rate_MGD":args.was_flow_rate_MGD,
-                "operator":args.operator
+                "operator":args.operator,
+                "source": "local-shell-Python-cmd2"
             }
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
@@ -271,7 +267,8 @@ class ShellApp(cmd2.Cmd):
                 "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
                 "clarifier_status": args.clarifier_status,
                 "observations": args.observations,
-                "operator": args.operator
+                "operator": args.operator,
+                "source": "local-shell-Python-cmd2"
             }
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
@@ -334,7 +331,8 @@ class ShellApp(cmd2.Cmd):
                 "scum_present": bool(args.scum_present),
                 "foam_present": bool(args.foam_present),
                 "oil_present": bool(args.oil_present),
-                "operator": args.operator
+                "operator": args.operator,
+                "source": "local-shell-Python-cmd2"
 
             }            
         except Exception as e:

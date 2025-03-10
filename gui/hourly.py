@@ -30,14 +30,15 @@ def hourly_window():
                     "after_wet_well_flow_rate_MGD": float(values["after_wet_well_flow_rate_MGD"]),
                     "effluent_flow_rate_MGD": float(values["effluent_flow_rate_MGD"]),
                     "was_flow_rate_MGD": float(values["was_flow_rate_MGD"]),
-                    "operator": values["operator"]
+                    "operator": values["operator"],
+                    "source": "local-gui-Python-FreeSimpleGUI"
                 }
                 
             except Exception as e:
                 print(f"Error saving hourly data: {e}")
                 sg.PopupError(f"Failed to save data: {e}")
                 data = None
-                
+
             if data is not None:
                 try:
                     response = requests.post("http://localhost:8000/submit-hourly", data=data)

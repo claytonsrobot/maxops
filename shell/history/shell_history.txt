@@ -478,3 +478,40 @@ gui
 quit
 gui
 quit
+spoof_hourly --timestamp 12  --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_outfall_daily -t 16 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Henry Lee Clark"
+gui
+quit
+spoof_hourly --timestamp 12 --influent_flow_rate_MGD 100 --after_wet_well_flow_rate_MGD 50 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_hourly --timestamp 13 --influent_flow_rate_MGD 100 --after_wet_well_flow_rate_MGD 99 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Henry Winkler"
+spoof_hourly --timestamp 13 --influent_flow_rate_MGD 100 --after_wet_well_flow_rate_MGD 99 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Batch Eval"
+spoof_hourly --timestamp 13 --influent_flow_rate_MGD 100 --after_wet_well_flow_rate_MGD 99 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Batch Eval"
+batch spoof_09March2025.txt
+batch spoof_09March2025.txt
+gui
+gui
+quit
+quit
+quit
+quit
+quit
+gu
+gui
+quit
+gui
+quit
+quit
+quit
+gui
+quit
+gui
+quit
+gui
+quit
+gui
+batch spoof_09March2025.txt
+run_webapp
+gui
+quit
+run_webapp
+quit
