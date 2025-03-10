@@ -618,11 +618,9 @@ class ShellApp(cmd2.Cmd):
         else:
             self.perror(f"Variable '{var_name}' not found.")
 
-    
     def do_gui(self,args):
-        from gui.gui import main
-        main() 
-
+        from gui.gui import menu_window
+        menu_window() 
 
 if __name__ == "__main__":
     app = ShellApp()

@@ -34,7 +34,7 @@ def do_browsefiles(args):
     file_path = sg.popup_get_file("Select a filepath to assign to variable!")
     return file_path
 
-def main():
+def menu_window():
     layout = [
         [sg.Button("Outfall Frame", key="-OUTFALL-"), sg.Button("Hourly Frame", key="-HOURLY-"), sg.Button("Exit", key="-EXIT-")]
     ]
@@ -53,4 +53,4 @@ def main():
     window.close()
 
 if __name__ == "__main__":
-    main()
+    menu_window()
