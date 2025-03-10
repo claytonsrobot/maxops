@@ -8,7 +8,7 @@ def outfall_window():
         [sg.Text("Operator Name:"), sg.InputText(default_text="Clayton Bennett", key="operator")],
         [sg.Text("Time of Observation:"), sg.InputText(default_text=default_time, key="timestamp")],
         [sg.Text("Safe to Make Observation:"), sg.Checkbox("Yes", default=True, key="safe_to_make_observation")],
-        [sg.Text("Flotable Present:"), sg.Checkbox("Yes", default=True, key="flotable_present")],
+        [sg.Text("Floatable Present:"), sg.Checkbox("Yes", default=True, key="floatable_present")],
         [sg.Text("Scum Present:"), sg.Checkbox("Yes", default=False, key="scum_present")],
         [sg.Text("Foam Present:"), sg.Checkbox("Yes", default=False, key="foam_present")],
         [sg.Text("Oil Present:"), sg.Checkbox("Yes", default=True, key="oil_present")],

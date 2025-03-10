@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Outfall Daily Entry{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Outfall Daily Entry Form</h2>
+    <form id="outfallForm" action="/submit-outfall" method="post">
+        <!-- Entry Timestamp -->
+        
+        <!-- Intended Timestamp -->
+        <label for="timestamp_intended_ISO">Timestamp:</label>
+        <input type="datetime-local" id="timestamp_intended_ISO" name="timestamp_intended_ISO" required><br>
+
+        
+        <!-- Safe to Make Observation -->
+        <input type="hidden" name="safe_to_make_observation" value="false">
+        <label for="safe_to_make_observation">Safe to Make Observation:</label>
+        <input type="checkbox" id="safe_to_make_observation" name="safe_to_make_observation" value="true">
+        <span></span><br>
+
+        <!-- Floatable Present -->
+        <input type="hidden" name="floatable_present" value="false">
+        <label for="floatable_present">Floatable Present:</label>
+        <input type="checkbox" id="floatable_present" name="floatable_present" value="true">
+        <span></span><br>
+
+        <!-- Scum Present -->
+        <input type="hidden" name="scum_present" value="false">
+        <label for="scum_present">Scum Present:</label>
+        <input type="checkbox" id="scum_present" name="scum_present" value="true">
+        <span></span><br>
+
+        <!-- Foam Present -->
+        <input type="hidden" name="foam_present" value="false">
+        <label for="foam_present">Foam Present:</label>
+        <input type="checkbox" id="foam_present" name="foam_present" value="true">
+        <span></span><br>
+
+        <!-- Oil Present -->
+        <input type="hidden" name="oil_present" value="false">
+        <label for="oil_present">Oil Present:</label>
+        <input type="checkbox" id="oil_present" name="oil_present" value="true">
+        <span></span><br>
+
+        <!-- Operator Name -->
+        <label for="operator">Operator:</label>
+        <input type="text" id="operator" name="operator" placeholder="Optional"><br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn green">Submit</button>
+    </form>
+</div>
+{% endblock %}

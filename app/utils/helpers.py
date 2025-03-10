@@ -164,7 +164,19 @@ def nowtime():
 
 # === Command: Sanitize Time ===
 def sanitize_time(timestamp):
-    #print(f"timestamp = {timestamp}")
+    print(f"timestamp = {timestamp}")
+    # Check and handle the timestamp, if it has minutes but not seconds
+    try:
+        # Attempt to parse the timestamp with the "%Y-%m-%dT%H:%M" format (up to minutes)
+        datetime.strptime(timestamp, "%Y-%m-%dT%H:%M")
+        print(f"Original timestamp is valid (up to minutes): {timestamp}")
+        
+        # Add ":00" for seconds if it doesn't have them
+        if len(timestamp) == 16:  # Length for "%Y-%m-%dT%H:%M"
+            timestamp = f"{timestamp}:00"
+            print(f"Updated timestamp with seconds: {timestamp}")
+    except ValueError:
+        pass
     try:
         # Check if the formatted string is already ISO 8601
         # Parse the string back to a datetime object to validate it

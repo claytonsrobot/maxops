@@ -8,7 +8,7 @@
         "foam_present": false,
         "oil_present": true,
         "operator": "Clayton Bennett",
-		"source": null
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T00:24:28",
@@ -19,7 +19,7 @@
         "foam_present": false,
         "oil_present": false,
         "operator": "Henry Lee Clark",
-		"source": null
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T00:55:02",
@@ -30,7 +30,7 @@
         "foam_present": true,
         "oil_present": true,
         "operator": "Dalvin Foster",
-		"source": null
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T00:55:27",
@@ -41,7 +41,7 @@
         "foam_present": true,
         "oil_present": true,
         "operator": "Glady Nakayama",
-		"source": null
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T01:18:55",
@@ -52,7 +52,7 @@
         "foam_present": false,
         "oil_present": true,
         "operator": "Clayton Bennett",
-		"source": null
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T12:17:51",
@@ -130,5 +130,115 @@
         "oil_present": true,
         "operator": "Clayton Bennett",
         "source": "local-gui-Python-FreeSimpleGUI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T14:55:41",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "flotable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Kale Carmon",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T14:56:02",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "flotable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Kale Carmon",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:09:48",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Mike Durham",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:10:26",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": false,
+        "operator": "Boomer Boomerson",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:30:08",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": false,
+        "scum_present": false,
+        "foam_present": false,
+        "oil_present": false,
+        "operator": "Mike Brower",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:50:12",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Don Hudgins",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:50:20",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Don Hudgins",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:52:47",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": false,
+        "foam_present": false,
+        "oil_present": false,
+        "operator": "Dalvin Foster",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T15:57:21",
+        "timestamp_intended_ISO": null,
+        "safe_to_make_observation": true,
+        "floatable_present": true,
+        "scum_present": false,
+        "foam_present": false,
+        "oil_present": false,
+        "operator": "Dalvin Foster",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T16:04:31",
+        "timestamp_intended_ISO": "2025-03-10T16:04:00",
+        "safe_to_make_observation": true,
+        "floatable_present": false,
+        "scum_present": false,
+        "foam_present": false,
+        "oil_present": false,
+        "operator": "Clayton",
+        "source": "web-post-Python-FastAPI"
     }
 ]

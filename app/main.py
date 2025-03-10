@@ -46,3 +46,8 @@ def get_hourly_form(request: Request):
 @app.get("/dashboard", response_class=HTMLResponse)
 def get_dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
+# Route for the outfall_daily_form
+@app.get("/outfall-daily-form", response_class=HTMLResponse)
+def get_dashboard(request: Request):
+    return templates.TemplateResponse("outfall_daily_form.html", {"request": request})

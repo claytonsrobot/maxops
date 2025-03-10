@@ -19,7 +19,7 @@ async def render_hourly_form(request: Request):
 @router.post("/submit-hourly")
 async def submit_hourly_data(
 
-    timestamp_entry_ISO: str = Form(...),
+    #timestamp_entry_ISO: str = Form(...),
     timestamp_intended_ISO: str = Form(...),
     influent_flow_rate_MGD: Optional[float] = Form(None),
     after_wet_well_flow_rate_MGD: Optional[float] = Form(None),
@@ -29,8 +29,8 @@ async def submit_hourly_data(
 
 ):
     data = {
-        "timestamp_entry_ISO": timestamp_entry_ISO,
-        "timestamp_intended_ISO": timestamp_intended_ISO,
+        "timestamp_entry_ISO": helpers.nowtime(),
+        "timestamp_intended_ISO": helpers.sanitize_time(timestamp_intended_ISO),
         "inluent_flow_rate_MGD": influent_flow_rate_MGD,
         "after_wet_well_flow_rate_MGD": after_wet_well_flow_rate_MGD,
         "effluent_flow_rate_MGD": effluent_flow_rate_MGD,
@@ -46,15 +46,15 @@ async def submit_hourly_data(
 
 @router.post("/submit-daily")
 async def submit_daily_data(
-    timestamp_entry_ISO: str = Form(...),
+    #timestamp_entry_ISO: str = Form(...),
     timestamp_intended_ISO: str = Form(...),
     flow_rate: float = Form(...),
     cod: float = Form(...),
     water_quality: str = Form(...)
 ):
     data = {
-        "timestamp_entry_ISO": timestamp_entry_ISO,
-        "timestamp_intended_ISO": timestamp_intended_ISO,
+        "timestamp_entry_ISO": helpers.nowtime(),
+        "timestamp_intended_ISO": helpers.sanitize_time(timestamp_intended_ISO),
         "flow_rate": flow_rate,
         "cod": cod,
         "water_quality": water_quality,
@@ -66,10 +66,10 @@ async def submit_daily_data(
 
 @router.post("/submit-outfall")
 async def submit_outfall_data(
-    timestamp_entry_ISO: str = Form(...),
+    #timestamp_entry_ISO: str = Form(...),
     timestamp_intended_ISO: str = Form(...),
     safe_to_make_observation: bool = Form(...),
-    flotable_present: bool = Form(...),
+    floatable_present: bool = Form(...),
     scum_present: bool = Form(...),
     foam_present: bool = Form(...),
     oil_present: bool = Form(...),
@@ -77,12 +77,12 @@ async def submit_outfall_data(
 ):
     try:
         # Convert integer flags to boolean values
-        print(f"timestamp_intended_ISO = {timestamp_intended_ISO}")
+        print(f"Forms: timestamp_intended_ISO = {timestamp_intended_ISO}")
         data = {
-            "timestamp_entry_ISO": timestamp_entry_ISO,
-            "timestamp_intended_ISO": timestamp_intended_ISO,
+            "timestamp_entry_ISO": helpers.nowtime(),
+            "timestamp_intended_ISO": helpers.sanitize_time(timestamp_intended_ISO),
             "safe_to_make_observation": safe_to_make_observation,
-            "flotable_present": flotable_present,
+            "floatable_present": floatable_present,
             "scum_present": scum_present,
             "foam_present": foam_present,
             "oil_present": oil_present,

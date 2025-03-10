@@ -142,14 +142,73 @@ document.addEventListener("DOMContentLoaded", () => {
         // Auto-populate datetime-local fields with the current time
         const datetimeFields = document.querySelectorAll('input[type="datetime-local"]');
         const now = new Date();
-        const formattedTime = now.toISOString().slice(0, 16); // Format as YYYY-MM-DDTHH:mm
+        //const formattedTime = now.toISOString().slice(0, 16); // Format as YYYY-MM-DDTHH:mm
+                
+        // Convert to Central Time (UTC - 6:00)
+        //const cstOffset = -6; // CST offset from UTC in hours
+        const cstOffset = 0; // CST offset from UTC in hours
+        const cstTime = new Date(now.getTime() + cstOffset * 60 * 60 * 1000);
 
+        // Format as ISO time (YYYY-MM-DDTHH:mm)
+        const year = cstTime.getFullYear();
+        const month = String(cstTime.getMonth() + 1).padStart(2, "0");
+        const day = String(cstTime.getDate()).padStart(2, "0");
+        const hours = String(cstTime.getHours()).padStart(2, "0");
+        const minutes = String(cstTime.getMinutes()).padStart(2, "0");
+        //const seconds = String(cstTime.getSeconds()).padStart(2, "0");
+
+        //const formattedTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+        const formattedTime = `${year}-${month}-${day}T${hours}:${minutes}`;
         datetimeFields.forEach((field) => {
             field.value = formattedTime;
         });
         },100);
 	
 });
+
+// Function to handle outfall data submission
+async function submitOutfallData(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get form input values
+    //const timestampEntry = document.getElementById("timestamp_entry_ISO").value;
+    const timestampIntended = document.getElementById("timestamp_intended_ISO").value;
+    const safeToObserve = document.getElementById("safe_to_make_observation").value;
+    const floatable = document.getElementById("floatable_present").value;
+    const scum = document.getElementById("scum_present").value;
+    const foam = document.getElementById("foam_present").value;
+    const oil = document.getElementById("oil_present").value;
+    const operator = document.getElementById("operator").value;
+
+    try {
+        // Send POST request to FastAPI
+        const response = await fetch(`${BASE_URL}/submit-outfall`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({
+                timestamp_intended_ISO: timestampIntended,
+                safe_to_make_observation: safeToObserve,
+                floatable_present: floatable,
+                scum_present: scum,
+                foam_present: foam,
+                oil_present: oil,
+                operator: operator,
+            }),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert("Outfall data submitted successfully!");
+        } else {
+            alert(`Error: ${result.error || "Failed to submit data"}`);
+        }
+    } catch (error) {
+        console.error("Error submitting outfall data:", error);
+        alert("Failed to submit outfall data.");
+    }
+}
 
 
 // Attach event listeners to forms and buttons

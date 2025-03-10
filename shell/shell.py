@@ -286,7 +286,7 @@ class ShellApp(cmd2.Cmd):
 
     # === Command: Outfall Data Entry ===
     arglist = list(["safe to make observation",
-        "flotable present",
+        "floatable present",
         "scum present",
         "foam present",
         "oil present"])
@@ -317,7 +317,7 @@ class ShellApp(cmd2.Cmd):
         Sheets: New sheet every months
         Rows: Each Day
         Columns: Operator initials, time, yes no questionss
-            questions: ["safe to make observation?", "flotable present?", "scum present?", "foam present?", "oil present?" ]
+            questions: ["safe to make observation?", "floatable present?", "scum present?", "foam present?", "oil present?" ]
         """
 
         try:
