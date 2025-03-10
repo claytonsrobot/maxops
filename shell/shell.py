@@ -18,8 +18,6 @@ from shell.batch_processor import process_batch  # Import batch processing funct
 #from shell.command_registry import register_commands  # Import command registration function
 
 import app.utils.helpers as helpers
-#from app.utils.helpers import save_hourly_data_to_csv,save_hourly_data_to_json,save_hourly_data_to_toml, save_daily_data_to_csv,save_daily_data_to_json,save_daily_data_to_toml 
-
 
 # Path configuration for your project
 EXPORT_DIR = Path("./exports/intermediate")
@@ -158,6 +156,7 @@ class ShellApp(cmd2.Cmd):
     spoof_hourly_parser.add_argument("-e","--effluent_flow_rate_MGD", type=float, help="Hourly effluent flow.")
     #spoof_hourly_parser.add_argument("-r","--ras_flow_rate_MGD", type=float, help="Hourly RAS flow.") # calculated from entries in clarifier page
     spoof_hourly_parser.add_argument("-w","--was_flow_rate_MGD", type=float, help="Hourly WAS flow.")
+    spoof_hourly_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
     #spoof_hourly_parser.add_argument("-u","--underflow_rate_MGD", type=float, help="Hourly influent flow.") # calculated from entries in clarifier page
     #spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
     #spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
@@ -211,7 +210,7 @@ class ShellApp(cmd2.Cmd):
             self.do_spoof_hourly("--help")
             return
         
-        args.timestamp = self._sanitize_time(args.timestamp)
+        #args.timestamp = self._sanitize_time(args.timestamp)
         
         """Capure args as data dictionary."""
         try:
@@ -223,11 +222,13 @@ class ShellApp(cmd2.Cmd):
             #    "water_quality": args.water_quality
             #}
             data = {
-                "timestamp_ISO":args.timestamp,
+                "timestamp_entry_ISO": helpers.nowtime(),
+                "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
                 "inluent_flow_rate_MGD":args.inluent_flow_rate_MGD,
                 "after_wet_well_flow_rate_MGD":args.after_wet_well_flow_rate_MGD,
                 "effluent_flow_rate_MGD":args.effluent_flow_rate_MGD,
-                "was_flow_rate_MGD":args.was_flow_rate_MGD
+                "was_flow_rate_MGD":args.was_flow_rate_MGD,
+                "operator":args.operator
             }
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
@@ -246,60 +247,14 @@ class ShellApp(cmd2.Cmd):
         else:
             self.do_spoof_hourly("--help")
 
-    def time_hour_explicit(self,hour_int):
-        if hour_int<=24:
-            # Assume today. Convert time to a rounded hour
-            #now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-            now = datetime.now()
-            timestamp = datetime(year = now.year,
-                                    month = now.month,
-                                    day = now.day,
-                                    hour = hour_int,
-                                    minute = 0,
-                                    second = 0).strftime("%Y-%m-%dT%H:%M:%S")
-            
-            return timestamp
-        else:
-            return False
-        
-    # === Command: Sanitize Time ===
-    def _sanitize_time(self,timestamp):
-        print(f"timestamp = {timestamp}")
-        #print(f"str(timestamp) is {str(timestamp)}")
-        #print(f"float(timestamp) is {float(timestamp)}")
-        #print(f"str(timestamp).isnumeric() is {str(timestamp).isnumeric()}")
 
-        try:
-            # Check if the formatted string is already ISO 8601
-            # Parse the string back to a datetime object to validate it
-            datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S")
-            iso8601 = True
-        except:
-            iso8601 = False
-
-        if iso8601:
-            return timestamp
-        elif timestamp == "now" or timestamp is None:
-            # overwrite
-            print("timestamp is 'now', attempting to assign..")
-            print(f"timestamp assigned as {timestamp}")
-            return self.nowtime()
-        
-        else: 
-            try:
-                # convert string from args.timestamp to an integer
-                # This will fail is there are non-numeric characters in the string.
-                return self.time_hour_explicit(int(float(timestamp))) 
-            except Exception as e:
-                print(f"A legimate time value was not offered. Null used: {e}")
-            
-    
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
     spoof_daily_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
     #spoof_daily_parser.add_argument("-d","--date", type=str, help="Date in YYYY-MM-DD format.")
     spoof_daily_parser.add_argument("-c","--clarifier_status", type=str, help="Clarifier status (e.g., operational, under maintenance).")
     spoof_daily_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
+    spoof_daily_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
@@ -312,19 +267,19 @@ class ShellApp(cmd2.Cmd):
             return
         
 
-        args.timestamp = self._sanitize_time(args.timestamp)
 
         try:
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
             data = {
-                "timestamp_ISO": args.timestamp,
+                "timestamp_entry_ISO": helpers.nowtime(),
+                "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
                 "clarifier_status": args.clarifier_status,
-                "observations": args.observations
+                "observations": args.observations,
+                "operator": args.operator
             }
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
             data = None
-            print("Args not present")
 
         if data is not None:
             try:
@@ -349,7 +304,7 @@ class ShellApp(cmd2.Cmd):
     outfall_parser.add_argument("-scum","--scum_present", type=int, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-foam","--foam_present", type=int, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-oil","--oil_present", type=int, help="Outfall observation, yes[1] or no[0].")
-    
+    outfall_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
 
     @cmd2.with_argparser(outfall_parser)
     def do_spoof_outfall_daily(self,args):
@@ -362,7 +317,6 @@ class ShellApp(cmd2.Cmd):
             self.do_spoof_outfall_daily("--help")
             return
         
-        args.timestamp = self._sanitize_time(args.timestamp)
         """
         Spreadsheet: Outfall observations 2024
         Frequency: Once per day, first shit (7am-3pm)
@@ -377,12 +331,15 @@ class ShellApp(cmd2.Cmd):
             # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
 
             data = {
-                "timestamp_ISO": args.timestamp,
-                "safe_to_make_observation": args.safe_to_make_observation,
-                "flotable_present": args.flotable_present,
-                "scum_present": args.scum_present,
-                "foam_present": args.foam_present,
-                "oil_present": args.oil_present
+                "timestamp_entry_ISO": helpers.nowtime(),
+                "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
+                "safe_to_make_observation": bool(args.safe_to_make_observation),
+                "flotable_present": bool(args.flotable_present),
+                "scum_present": bool(args.scum_present),
+                "foam_present": bool(args.foam_present),
+                "oil_present": bool(args.oil_present),
+                "operator": args.operator
+
             }            
         except Exception as e:
             print(f"Error spoofing outfall data: {e}")
@@ -495,14 +452,11 @@ class ShellApp(cmd2.Cmd):
     @cmd2.with_argparser(now_parser)
     def do_now(self, args):
         """Calculate the current time."""
-        now_time = self.nowtime()
+        now_time = helpers.nowtime()
         #print(f"{now_time}")
         self.poutput(f"{now_time}")
         #return None
 
-    def nowtime(self):
-        now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        return now_time
     
 
     # === Command: print ===
@@ -617,7 +571,7 @@ class ShellApp(cmd2.Cmd):
     def default(self, statement):
         """Override the default method to handle dollar sign variables."""
         # Replace variables in the command with their values
-        command = statement.raw
+        command = statement.raw 
         for var_name, var_value in self.vars.items():
             command = command.replace(f"${var_name}", var_value)
 
@@ -625,6 +579,22 @@ class ShellApp(cmd2.Cmd):
         #self.poutput(f"Executing command: {command}")
         self.poutput(f"{command}")
         # You could further process the command here if needed.
+
+    def default_test(self, statement):
+        """Override the default method to handle unknown commands and undefined variables."""
+        command = statement.raw
+
+        # Handle undefined variables
+        try:
+            for var_name in self.vars.keys():
+                if f"${var_name}" in command:
+                    command = command.replace(f"${var_name}", self.vars[var_name])
+            
+            # Check for any remaining undefined variables
+            if "$" in command:
+                self.poutput("Undefined variables detected!")
+        except Exception as e:
+            self.perror(f"{command} failed: {e}")
 
     def do_gett_hold(self, args):
 

@@ -6,3 +6,31 @@ timestamp_ISO,safe_to_make_observation,flotable_present,scum_present,foam_presen
 2025-03-09T16:54:26,1,1,0,0,
 timestamp_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
 2025-03-09T16:56:46,1,1,0,0,1
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present
+2025-03-09T19:17:45,2025-03-09T15:00:00,1,1,0,0,1
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T19:25:49,2025-03-09T15:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T19:30:26,2025-03-09T15:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T19:33:16,2025-03-09T15:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T22:15:03,2025-03-09T15:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T22:15:46,2025-03-09T15:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T22:21:43,2025-03-09T16:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:06:04,2025-03-09T16:00:00,1,1,0,0,1,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:13:15,2025-03-09T23:13:11,True,True,False,False,True,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:22:00,2025-03-09T23:21:54,True,True,False,False,True,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:23:45,2025-03-09T23:23:39,True,True,False,False,True,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:24:15,2025-03-09T22:00:00,True,False,False,False,True,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:24:44,2025-03-09T12:00:00,True,False,False,False,True,Clayton Bennett
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,flotable_present,scum_present,foam_present,oil_present,operator
+2025-03-09T23:25:48,2025-03-09T16:00:00,True,True,False,False,True,True

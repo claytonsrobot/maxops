@@ -2,6 +2,7 @@ from pathlib import Path
 import csv
 import json
 import toml
+from datetime import datetime
 
 EXPORT_DIR = Path("./exports/intermediate")
 
@@ -156,3 +157,50 @@ def clear_export_directory():
             print(f"Error clearing export directory: {e}")  # Handle unexpected errors
             return False
     return False  # Return False if the directory does not exist
+
+def nowtime():
+    now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    return now_time
+
+# === Command: Sanitize Time ===
+def sanitize_time(timestamp):
+    #print(f"timestamp = {timestamp}")
+    try:
+        # Check if the formatted string is already ISO 8601
+        # Parse the string back to a datetime object to validate it
+        datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S")
+        iso8601 = True
+    except:
+        iso8601 = False
+
+    if iso8601:
+        return timestamp
+    elif timestamp == "now" or timestamp is None:
+        # overwrite
+        print("timestamp is 'now', attempting to assign..")
+        print(f"timestamp assigned as {timestamp}")
+        return nowtime()
+    
+    else: 
+        try:
+            # convert string from args.timestamp to an integer
+            # This will fail is there are non-numeric characters in the string.
+            return time_hour_explicit(int(float(timestamp))) 
+        except Exception as e:
+            print(f"A legimate time value was not offered. Null used: {e}")
+        
+def time_hour_explicit(hour_int):
+    if hour_int<=24:
+        # Assume today. Convert time to a rounded hour
+        #now_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        now = datetime.now()
+        timestamp = datetime(year = now.year,
+                                month = now.month,
+                                day = now.day,
+                                hour = hour_int,
+                                minute = 0,
+                                second = 0).strftime("%Y-%m-%dT%H:%M:%S")
+        
+        return timestamp
+    else:
+        return False

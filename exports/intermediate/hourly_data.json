@@ -346,5 +346,110 @@
         "after_wet_well_flow_rate_MGD": 66.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:15:14",
+        "timestamp_intended_ISO": "2025-03-09T19:15:14",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:16:02",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:26:41",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:28:05",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:30:02",
+        "timestamp_intended_ISO": "2025-03-09T19:30:02",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:33:12",
+        "timestamp_intended_ISO": "2025-03-09T19:33:12",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:13:43",
+        "timestamp_intended_ISO": "2025-03-09T22:13:43",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:14:26",
+        "timestamp_intended_ISO": "2025-03-09T15:00:00",
+        "inluent_flow_rate_MGD": null,
+        "after_wet_well_flow_rate_MGD": null,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:15:42",
+        "timestamp_intended_ISO": "2025-03-09T22:15:42",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T23:06:15",
+        "timestamp_intended_ISO": "2025-03-09T15:00:00",
+        "inluent_flow_rate_MGD": null,
+        "after_wet_well_flow_rate_MGD": null,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T23:21:15",
+        "timestamp_intended_ISO": "2025-03-09T23:21:10",
+        "inluent_flow_rate_MGD": 0.0,
+        "after_wet_well_flow_rate_MGD": 0.0,
+        "effluent_flow_rate_MGD": 0.0,
+        "was_flow_rate_MGD": 0.0,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T23:23:11",
+        "timestamp_intended_ISO": "2025-03-09T23:22:45",
+        "inluent_flow_rate_MGD": 99.0,
+        "after_wet_well_flow_rate_MGD": 98.0,
+        "effluent_flow_rate_MGD": 88.0,
+        "was_flow_rate_MGD": 2.0,
+        "operator": "Henry Lee Clark"
     }
 ]

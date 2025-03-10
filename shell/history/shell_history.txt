@@ -393,3 +393,37 @@ spoof_hourly --timestamp now --inluent_flow_rate_MGD 67 --after_wet_well_flow_ra
 idontknowthiscommand
 test
 quit
+spoof_hourly --timestamp now --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5
+spoof_hourly --timestamp 14 --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5
+spoof_outfall_daily -t 15 -safe 1 -float 1 -scum 0 -foam 0 -oil 1
+quit
+quit
+spoof_outfall_daily -t 15 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Clayton Bennett"
+spoof_hourly --timestamp 14 --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+quit
+spoof_hourly --timestamp 14 --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_hourly --timestamp now --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_outfall_daily -t 15 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Clayton Bennett"
+batch spoof_09March2025.txt
+batch eval.txt
+eevall
+quit
+rrr
+rrrrr
+sett r=1
+$r
+eval $r
+batch eval
+batch eval.txt
+spoof_hourly --timestamp now --inluent_flow_rate_MGD 67 --after_wet_well_flow_rate_MGD 66 --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_hourly --timestamp 15  --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+spoof_outfall_daily -t 15 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Clayton Bennett"
+batch spoof_09March2025.txt
+now
+spoof_outfall_daily -t 16 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Clayton Bennett"
+quit
+spoof_outfall_daily -t 16 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Clayton Bennett"
+spoof_hourly --timestamp 15  --effluent_flow_rate_MGD 63 --was_flow_rate_MGD 1.5 -op "Clayton Bennett"
+quit
+spoof_outfall_daily -t 16 -safe 1 -float 1 -scum 0 -foam 0 -oil 1 -op "Henry Lee Clark"
+quit

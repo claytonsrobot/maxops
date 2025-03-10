@@ -1,0 +1,47 @@
+import FreeSimpleGUI as sg
+import app.utils.helpers as helpers
+
+def outfall_window():
+    default_time = helpers.nowtime()
+    layout = [
+        [sg.Text("Operator Name:"), sg.InputText(default_text="Clayton Bennett", key="operator")],
+        [sg.Text("Time of Observation:"), sg.InputText(default_text=default_time, key="timestamp")],
+        [sg.Text("Safe to Make Observation:"), sg.Checkbox("Yes", default=True, key="safe_to_make_observation")],
+        [sg.Text("Flotable Present:"), sg.Checkbox("Yes", default=True, key="flotable_present")],
+        [sg.Text("Scum Present:"), sg.Checkbox("Yes", default=False, key="scum_present")],
+        [sg.Text("Foam Present:"), sg.Checkbox("Yes", default=False, key="foam_present")],
+        [sg.Text("Oil Present:"), sg.Checkbox("Yes", default=True, key="oil_present")],
+        [sg.Button("Submit"), sg.Button("Close")]
+    ]
+
+    window = sg.Window("Outfall Frame", layout)
+
+    while True:
+        event, values = window.read()
+        if event == sg.WINDOW_CLOSED or event == "Close":
+            break
+        if event == "Submit":
+            print(values)  # For debugging or processing inputs
+            
+        try:
+            # if you chanage these keys and the order, and a relevant CSV file already exists, you should see: "WARNING: The existing CSV column names DO NOT match data.keys()"
+            data = {
+                "timestamp_entry_ISO": helpers.nowtime(),
+                "timestamp_intended_ISO": helpers.sanitize_time(values["timestamp"]),
+                "safe_to_make_observation": values["safe_to_make_observation"],
+                "flotable_present": values["flotable_present"],
+                "scum_present": values["scum_present"],
+                "foam_present": values["foam_present"],
+                "oil_present": values["oil_present"],
+                "operator": values["operator"]
+            }
+            helpers.save_outfall_data(data)
+            sg.Popup("Data saved successfully!")
+        except Exception as e:
+            print(f"Error spoofing hourly data: {e}")
+            data = None
+
+        
+    window.close()
+if __name__ == "__main__":
+    outfall_window()
