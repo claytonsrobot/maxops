@@ -1,10 +1,10 @@
 # __main__.py
-from gui.gui import main
+from gui.gui import menu_window
 
 def cli_entry():
     try:
         # Launch the gui
-        main() 
+        menu_window() 
     except Exception as e:
         import traceback
         traceback.print_exc()

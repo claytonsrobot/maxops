@@ -40,8 +40,7 @@ def outfall_window():
         except Exception as e:
             print(f"Error spoofing hourly data: {e}")
             data = None
-
-        
     window.close()
+
 if __name__ == "__main__":
     outfall_window()

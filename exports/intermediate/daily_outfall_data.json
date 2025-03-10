@@ -18,5 +18,25 @@
         "foam_present": false,
         "oil_present": false,
         "operator": "Henry Lee Clark"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T00:55:02",
+        "timestamp_intended_ISO": "2025-03-10T00:54:52",
+        "safe_to_make_observation": true,
+        "flotable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Dalvin Foster"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T00:55:27",
+        "timestamp_intended_ISO": "2025-04-10T09:00:52",
+        "safe_to_make_observation": true,
+        "flotable_present": true,
+        "scum_present": true,
+        "foam_present": true,
+        "oil_present": true,
+        "operator": "Glady Nakayama"
     }
 ]

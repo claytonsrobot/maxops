@@ -24,6 +24,8 @@ print(f"dir(wof) = {dir(wof)}")
 import FreeSimpleGUI as sg
 from gui.outfall import outfall_window
 from gui.hourly import hourly_window
+from gui.known import outfall_known_window
+from gui.known import hourly_known_window
 
 #print(dir(sg))
 #sg.user_settings_object
@@ -36,7 +38,9 @@ def do_browsefiles(args):
 
 def menu_window():
     layout = [
-        [sg.Button("Outfall Frame", key="-OUTFALL-"), sg.Button("Hourly Frame", key="-HOURLY-"), sg.Button("Exit", key="-EXIT-")]
+        [sg.Button("Outfall", key="-OUTFALL-"), sg.Button("Outfall History", key="-OUTFALL-KNOWN-")],
+        [sg.Button("Hourly", key="-HOURLY-"), sg.Button("Hourly History", key="-HOURLY-KNOWN-")], 
+        [sg.Button("Exit", key="-EXIT-")]
     ]
 
     window = sg.Window("Main Menu", layout)
@@ -49,6 +53,10 @@ def menu_window():
             outfall_window()
         if event == "-HOURLY-":
             hourly_window()
+        if event == "-OUTFALL-KNOWN-":
+            outfall_known_window()
+        if event == "-HOURLY-KNOWN-":
+            hourly_known_window()
 
     window.close()
 
