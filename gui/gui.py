@@ -22,10 +22,10 @@ print(f"dir(wof) = {dir(wof)}")
 '''
 
 import FreeSimpleGUI as sg
-from gui.outfall import outfall_window
-from gui.hourly import hourly_window
-from gui.known import outfall_known_window
-from gui.known import hourly_known_window
+from gui.gui_outfall import outfall_window
+from gui.gui_hourly import hourly_window
+from gui.gui_known import outfall_known_window
+from gui.gui_known import hourly_known_window
 
 #print(dir(sg))
 #sg.user_settings_object

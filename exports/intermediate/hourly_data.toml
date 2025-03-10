@@ -114,3 +114,23 @@ was_flow_rate_MGD = 1.5
 operator = "Batch Eval"
 source = "web-post-Python-FastAPI"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T13:24:00"
+timestamp_intended_ISO = "2025-03-10T14:00:00"
+inluent_flow_rate_MGD = 1.5
+after_wet_well_flow_rate_MGD = 2.0
+effluent_flow_rate_MGD = 1.8
+was_flow_rate_MGD = 0.5
+operator = "JohnDoe"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T13:24:00"
+timestamp_intended_ISO = "2025-03-10T14:00:00"
+inluent_flow_rate_MGD = 1.5
+after_wet_well_flow_rate_MGD = 2.0
+effluent_flow_rate_MGD = 1.8
+was_flow_rate_MGD = 0.5
+operator = "JohnDoe"
+source = "web-post-Python-FastAPI"
+

@@ -19,3 +19,7 @@ timestamp_entry_ISO,timestamp_intended_ISO,inluent_flow_rate_MGD,after_wet_well_
 2025-03-10T13:05:24,2025-03-10T13:05:24,67.0,66.0,63.0,1.5,Clayton Bennett,web-post-Python-FastAPI
 timestamp_entry_ISO,timestamp_intended_ISO,inluent_flow_rate_MGD,after_wet_well_flow_rate_MGD,effluent_flow_rate_MGD,was_flow_rate_MGD,operator,source
 2025-03-10T13:05:28,2025-03-10T13:00:00,100.0,99.0,63.0,1.5,Batch Eval,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,inluent_flow_rate_MGD,after_wet_well_flow_rate_MGD,effluent_flow_rate_MGD,was_flow_rate_MGD,operator,source
+2025-03-10T13:24:00,2025-03-10T14:00:00,1.5,2.0,1.8,0.5,JohnDoe,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,inluent_flow_rate_MGD,after_wet_well_flow_rate_MGD,effluent_flow_rate_MGD,was_flow_rate_MGD,operator,source
+2025-03-10T13:24:00,2025-03-10T14:00:00,1.5,2.0,1.8,0.5,JohnDoe,web-post-Python-FastAPI

@@ -6,7 +6,8 @@
         "after_wet_well_flow_rate_MGD": 98.0,
         "effluent_flow_rate_MGD": 93.0,
         "was_flow_rate_MGD": 1.4,
-        "operator": "Clayton Bennett"
+        "operator": "Clayton Bennett",
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T00:25:16",
@@ -15,7 +16,8 @@
         "after_wet_well_flow_rate_MGD": 86.0,
         "effluent_flow_rate_MGD": 84.0,
         "was_flow_rate_MGD": 1.5,
-        "operator": "Henry Lee Clark"
+        "operator": "Henry Lee Clark",
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T01:19:18",
@@ -24,7 +26,8 @@
         "after_wet_well_flow_rate_MGD": 0.0,
         "effluent_flow_rate_MGD": 0.0,
         "was_flow_rate_MGD": 0.0,
-        "operator": "Clayton Bennett"
+        "operator": "Clayton Bennett",
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T01:20:25",
@@ -33,7 +36,8 @@
         "after_wet_well_flow_rate_MGD": 0.0,
         "effluent_flow_rate_MGD": 0.0,
         "was_flow_rate_MGD": 0.0,
-        "operator": "Clayton Bennett"
+        "operator": "Clayton Bennett",
+        "source": null
     },
     {
         "timestamp_entry_ISO": "2025-03-10T12:32:41",
@@ -113,6 +117,26 @@
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
         "operator": "Batch Eval",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T13:24:00",
+        "timestamp_intended_ISO": "2025-03-10T14:00:00",
+        "inluent_flow_rate_MGD": 1.5,
+        "after_wet_well_flow_rate_MGD": 2.0,
+        "effluent_flow_rate_MGD": 1.8,
+        "was_flow_rate_MGD": 0.5,
+        "operator": "JohnDoe",
+        "source": "web-post-Python-FastAPI"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-10T13:24:00",
+        "timestamp_intended_ISO": "2025-03-10T14:00:00",
+        "inluent_flow_rate_MGD": 1.5,
+        "after_wet_well_flow_rate_MGD": 2.0,
+        "effluent_flow_rate_MGD": 1.8,
+        "was_flow_rate_MGD": 0.5,
+        "operator": "JohnDoe",
         "source": "web-post-Python-FastAPI"
     }
 ]
