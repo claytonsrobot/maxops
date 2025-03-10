@@ -1,118 +1,7 @@
 [
     {
-        "timestamp": "2025-03-09T16:24:06",
-        "safe_to_make_observation": "1",
-        "flotable_present": "1",
-        "scum_present": "1",
-        "foam_present": "1",
-        "oil_present": 0
-    },
-    {
-        "timestamp_ISO": "2025-03-09T16:44:49",
-        "safe_to_make_observation": "1",
-        "flotable_present": "1",
-        "scum_present": "1",
-        "foam_present": "1",
-        "oil_present": 0
-    },
-    {
-        "timestamp_ISO": "2025-03-09T16:54:26",
-        "safe_to_make_observation": "1",
-        "flotable_present": "1",
-        "scum_present": "0",
-        "foam_present": "0",
-        "oil_present": null
-    },
-    {
-        "timestamp_ISO": "2025-03-09T16:56:46",
-        "safe_to_make_observation": "1",
-        "flotable_present": "1",
-        "scum_present": "0",
-        "foam_present": "0",
-        "oil_present": 1
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T19:17:45",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T19:25:49",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T19:30:26",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T19:33:16",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T22:15:03",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T22:15:46",
-        "timestamp_intended_ISO": "2025-03-09T15:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T22:21:43",
-        "timestamp_intended_ISO": "2025-03-09T16:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:06:04",
-        "timestamp_intended_ISO": "2025-03-09T16:00:00",
-        "safe_to_make_observation": 1,
-        "flotable_present": 1,
-        "scum_present": 0,
-        "foam_present": 0,
-        "oil_present": 1,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:13:15",
-        "timestamp_intended_ISO": "2025-03-09T23:13:11",
+        "timestamp_entry_ISO": "2025-03-10T00:24:10",
+        "timestamp_intended_ISO": "2025-03-10T00:24:04",
         "safe_to_make_observation": true,
         "flotable_present": true,
         "scum_present": false,
@@ -121,73 +10,13 @@
         "operator": "Clayton Bennett"
     },
     {
-        "timestamp_entry_ISO": "2025-03-09T23:22:00",
-        "timestamp_intended_ISO": "2025-03-09T23:21:54",
+        "timestamp_entry_ISO": "2025-03-10T00:24:28",
+        "timestamp_intended_ISO": "2025-03-10T04:00:00",
         "safe_to_make_observation": true,
         "flotable_present": true,
-        "scum_present": false,
+        "scum_present": true,
         "foam_present": false,
-        "oil_present": true,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:23:45",
-        "timestamp_intended_ISO": "2025-03-09T23:23:39",
-        "safe_to_make_observation": true,
-        "flotable_present": true,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:24:15",
-        "timestamp_intended_ISO": "2025-03-09T22:00:00",
-        "safe_to_make_observation": true,
-        "flotable_present": false,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:24:44",
-        "timestamp_intended_ISO": "2025-03-09T12:00:00",
-        "safe_to_make_observation": true,
-        "flotable_present": false,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
-        "operator": "Clayton Bennett"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-09T23:25:48",
-        "timestamp_intended_ISO": "2025-03-09T16:00:00",
-        "safe_to_make_observation": true,
-        "flotable_present": true,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
-        "operator": true
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-10T00:08:00",
-        "timestamp_intended_ISO": "2025-03-10T16:00:00",
-        "safe_to_make_observation": true,
-        "flotable_present": true,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
+        "oil_present": false,
         "operator": "Henry Lee Clark"
-    },
-    {
-        "timestamp_entry_ISO": "2025-03-10T00:19:02",
-        "timestamp_intended_ISO": "2025-03-10T00:18:57",
-        "safe_to_make_observation": true,
-        "flotable_present": true,
-        "scum_present": false,
-        "foam_present": false,
-        "oil_present": true,
-        "operator": "Clayton Bennett"
     }
 ]

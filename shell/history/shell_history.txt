@@ -452,3 +452,14 @@ quit
 quit
 gui
 quit
+gui
+help
+help -v
+tutorial
+clear_exports
+list_exports
+gui
+list_exports
+notepad++
+notepad
+quit

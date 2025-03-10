@@ -24,23 +24,3 @@ timestamp = "2025-03-07T12:24:27"
 timestamp = "2025-03-07T12:25:24"
 observations = "coffee x1"
 
-[[hourly_data]]
-timestamp_entry_ISO = "2025-03-09T23:09:28"
-timestamp_intended_ISO = "2025-03-09T23:09:26"
-safe_to_make_observation = true
-flotable_present = true
-scum_present = false
-foam_present = false
-oil_present = true
-operator = "Clayton Bennett"
-
-[[hourly_data]]
-timestamp_entry_ISO = "2025-03-09T23:09:49"
-timestamp_intended_ISO = "2025-03-09T23:09:26"
-safe_to_make_observation = true
-flotable_present = true
-scum_present = false
-foam_present = false
-oil_present = true
-operator = "Willem Defoe"
-

@@ -1,0 +1,428 @@
+[
+    {
+        "timestamp": "2025-03-06T01:02",
+        "flow_rate": 1.0,
+        "cod": 2.0,
+        "water_quality": "good"
+    },
+    {
+        "timestamp": "2025-04-06T01:02",
+        "flow_rate": 0.04,
+        "cod": 5.0,
+        "water_quality": "1"
+    },
+    {
+        "timestamp": "2025-03-07T10:56:28",
+        "flow_rate": 10.0,
+        "cod": 10.0,
+        "water_quality": "wonderous"
+    },
+    {
+        "timestamp": "2025-03-07T10:56:28",
+        "flow_rate": 1234.0,
+        "cod": 1234.0,
+        "water_quality": "hello-world"
+    },
+    {
+        "timestamp": "2025-03-07T11:02:43",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:10:28",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:10:28",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:12:42",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:10:28",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:10:28",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:10:28",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:32:13",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "now-test"
+    },
+    {
+        "timestamp": "2025-03-07T11:44:08",
+        "flow_rate": 5150.0,
+        "cod": 1.0,
+        "water_quality": "go work on daily"
+    },
+    {
+        "timestamp": "2025-03-07T12:09:46",
+        "flow_rate": 4190.0,
+        "cod": 99.0,
+        "water_quality": "succeeded in modular file write, keys dictated by shell flags"
+    },
+    {
+        "timestamp": "2025-03-07T12:22:28",
+        "flow_rate": 4190.0,
+        "cod": 99.0,
+        "water_quality": "succeeded in modular file write, keys dictated by shell flags"
+    },
+    {
+        "timestamp": "2025-03-07T12:22:50",
+        "flow_rate": 4190.0,
+        "cod": 99.0,
+        "water_quality": "succeeded in modular file write, keys dictated by shell flags"
+    },
+    {
+        "timestamp": "2025-03-07T14:03:19",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:07:51",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:10:06",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "clear"
+    },
+    {
+        "timestamp": "2025-03-07T14:55:59",
+        "flow_rate": 55.0,
+        "cod": 99.0,
+        "water_quality": "sudsy"
+    },
+    {
+        "timestamp": "2025-03-07T21:07",
+        "flow_rate": 1.0,
+        "cod": 2.0,
+        "water_quality": "3"
+    },
+    {
+        "timestamp": null,
+        "flow_rate": null,
+        "cod": null,
+        "water_quality": null
+    },
+    {
+        "timestamp": null,
+        "flow_rate": null,
+        "cod": null,
+        "water_quality": null
+    },
+    {
+        "timestamp": "2025-03-08T23:12:34",
+        "inluent_flow_rate": null,
+        "after_wet_well_flow_rate": null,
+        "effluent_flow_rate": null,
+        "was_flow_rate": null
+    },
+    {
+        "timestamp": "2025-03-08T23:15:44",
+        "inluent_flow_rate": null,
+        "after_wet_well_flow_rate": null,
+        "effluent_flow_rate": null,
+        "was_flow_rate": null
+    },
+    {
+        "timestamp": "2025-03-08T23:16:38",
+        "inluent_flow_rate": null,
+        "after_wet_well_flow_rate": null,
+        "effluent_flow_rate": null,
+        "was_flow_rate": null
+    },
+    {
+        "timestamp": "2025-03-08T13:00:00",
+        "inluent_flow_rate": null,
+        "after_wet_well_flow_rate": null,
+        "effluent_flow_rate": null,
+        "was_flow_rate": null
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-08T23:00:00",
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-08T23:00:00",
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-08T23:00:00",
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-08T23:00:00",
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T23:00:00",
+        "inluent_flow_rate": 87.0,
+        "after_wet_well_flow_rate": 88.0,
+        "effluent_flow_rate": 89.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T01:00:00",
+        "inluent_flow_rate": 45.0,
+        "after_wet_well_flow_rate": 77.0,
+        "effluent_flow_rate": 55.0,
+        "was_flow_rate": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T01:00:00",
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T01:00:00",
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T13:00:00",
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T13:00:00",
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": null,
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp": "2025-03-09T13:00:00",
+        "inluent_flow_rate_MGD": 45.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 55.0,
+        "was_flow_rate_MGD": 1.0
+    },
+    {
+        "timestamp_ISO": "2025-03-09T16:47:42",
+        "inluent_flow_rate_MGD": null,
+        "after_wet_well_flow_rate_MGD": null,
+        "effluent_flow_rate_MGD": null,
+        "was_flow_rate_MGD": null
+    },
+    {
+        "timestamp_ISO": "2025-03-09T16:55:21",
+        "inluent_flow_rate_MGD": 88.0,
+        "after_wet_well_flow_rate_MGD": 87.0,
+        "effluent_flow_rate_MGD": 79.0,
+        "was_flow_rate_MGD": 1.3
+    },
+    {
+        "timestamp_ISO": "2025-03-09T13:00:00",
+        "inluent_flow_rate_MGD": 78.0,
+        "after_wet_well_flow_rate_MGD": 77.0,
+        "effluent_flow_rate_MGD": 75.0,
+        "was_flow_rate_MGD": 2.0
+    },
+    {
+        "timestamp_ISO": "2025-03-09T16:59:24",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:15:14",
+        "timestamp_intended_ISO": "2025-03-09T19:15:14",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:16:02",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:26:41",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:28:05",
+        "timestamp_intended_ISO": "2025-03-09T14:00:00",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:30:02",
+        "timestamp_intended_ISO": "2025-03-09T19:30:02",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T19:33:12",
+        "timestamp_intended_ISO": "2025-03-09T19:33:12",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:13:43",
+        "timestamp_intended_ISO": "2025-03-09T22:13:43",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:14:26",
+        "timestamp_intended_ISO": "2025-03-09T15:00:00",
+        "inluent_flow_rate_MGD": null,
+        "after_wet_well_flow_rate_MGD": null,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    },
+    {
+        "timestamp_entry_ISO": "2025-03-09T22:15:42",
+        "timestamp_intended_ISO": "2025-03-09T22:15:42",
+        "inluent_flow_rate_MGD": 67.0,
+        "after_wet_well_flow_rate_MGD": 66.0,
+        "effluent_flow_rate_MGD": 63.0,
+        "was_flow_rate_MGD": 1.5,
+        "operator": "Clayton Bennett"
+    }
+]

@@ -619,6 +619,7 @@ class ShellApp(cmd2.Cmd):
             self.perror(f"Variable '{var_name}' not found.")
 
     def do_gui(self,args):
+        "Launch the MaxOp Graphical User Interface"
         from gui.gui import menu_window
         menu_window() 
 
