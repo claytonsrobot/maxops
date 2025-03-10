@@ -566,7 +566,7 @@ class ShellApp(cmd2.Cmd):
     
 
         
-    def default(self, statement):
+    def default_hold(self, statement):
         """Override the default method to handle dollar sign variables."""
         # Replace variables in the command with their values
         command = statement.raw 
@@ -593,6 +593,7 @@ class ShellApp(cmd2.Cmd):
                 self.poutput("Undefined variables detected!")
         except Exception as e:
             self.perror(f"{command} failed: {e}")
+            print(f"{command} is not a recognized command, alias, or macro.")
 
     def do_gett_hold(self, args):
 

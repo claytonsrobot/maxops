@@ -463,3 +463,13 @@ list_exports
 notepad++
 notepad
 quit
+help
+show
+$
+quit
+tt
+batch eval.txt
+$c
+eval $c
+gui
+quit
