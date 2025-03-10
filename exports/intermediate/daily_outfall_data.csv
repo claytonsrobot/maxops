@@ -38,3 +38,13 @@ timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_pr
 2025-03-10T15:57:21,,True,True,False,False,False,Dalvin Foster,web-post-Python-FastAPI
 timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
 2025-03-10T16:04:31,2025-03-10T16:04:00,True,False,False,False,False,Clayton,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
+2025-03-10T16:18:00,2025-03-10T16:17:00,True,True,True,False,False,Clayton Bennett,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
+2025-03-10T16:19:57,2025-03-10T16:19:00,True,True,True,False,False,Clayton Bennett,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
+2025-03-10T16:22:23,2025-03-10T16:22:00,True,True,False,False,False,Clayton Bennett,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
+2025-03-10T16:23:09,2025-03-10T16:22:00,True,False,False,False,True,Test,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,safe_to_make_observation,floatable_present,scum_present,foam_present,oil_present,operator,source
+2025-03-10T16:25:51,2025-03-10T15:00:00,True,True,False,False,True,Batch Eval,web-post-Python-FastAPI

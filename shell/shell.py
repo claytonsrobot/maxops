@@ -293,7 +293,7 @@ class ShellApp(cmd2.Cmd):
     outfall_parser = argparse.ArgumentParser(description= "Outfall data entry.")
     outfall_parser.add_argument("-t","--timestamp", type=str, default=None, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
     outfall_parser.add_argument("-safe","--safe_to_make_observation", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-float","--flotable_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-float","--floatable_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-scum","--scum_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-foam","--foam_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
     outfall_parser.add_argument("-oil","--oil_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
@@ -327,7 +327,7 @@ class ShellApp(cmd2.Cmd):
                 "timestamp_entry_ISO": helpers.nowtime(),
                 "timestamp_intended_ISO": helpers.sanitize_time(args.timestamp),
                 "safe_to_make_observation": bool(args.safe_to_make_observation),
-                "flotable_present": bool(args.flotable_present),
+                "floatable_present": bool(args.floatable_present),
                 "scum_present": bool(args.scum_present),
                 "foam_present": bool(args.foam_present),
                 "oil_present": bool(args.oil_present),

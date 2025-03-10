@@ -30,7 +30,7 @@ def outfall_window():
                 "timestamp_entry_ISO": helpers.nowtime(),
                 "timestamp_intended_ISO": helpers.sanitize_time(values["timestamp"]),
                 "safe_to_make_observation": values["safe_to_make_observation"],
-                "flotable_present": values["flotable_present"],
+                "floatable_present": values["floatable_present"],
                 "scum_present": values["scum_present"],
                 "foam_present": values["foam_present"],
                 "oil_present": values["oil_present"],
