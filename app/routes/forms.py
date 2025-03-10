@@ -17,20 +17,26 @@ async def render_hourly_form(request: Request):
 @router.post("/submit-hourly")
 async def submit_hourly_data(
     timestamp: str = Form(...),
-    flow_rate: float = Form(...),
-    cod: float = Form(...),
-    water_quality: str = Form(...)
+    influent_flow_rate_MGD: float = Form(...),
+    after_wet_well_flow_rate_MGD: float = Form(...),
+    effluent_flow_rate_MGD: float = Form(...),
+    was_flow_rate_MGD: float = Form(...),
+    operator: str = Form(...)
 ):
     data = {
-        "timestamp": timestamp,
-        "flow_rate": flow_rate,
-        "cod": cod,
-        "water_quality": water_quality,
+        "timestamp_entry_ISO": helpers.nowtime(),
+        "timestamp_intended_ISO": helpers.sanitize_time(timestamp),
+        "inluent_flow_rate_MGD": influent_flow_rate_MGD,
+        "after_wet_well_flow_rate_MGD": after_wet_well_flow_rate_MGD,
+        "effluent_flow_rate_MGD": effluent_flow_rate_MGD,
+        "was_flow_rate_MGD": was_flow_rate_MGD,
+        "operator": operator,
     }
     helpers.save_hourly_data(data)
     # Process the data (you can save it to a database or log it)
-    print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
+    print(f"Received hourly data: {data}")
     return {"message": "Hourly data submitted successfully!"}
+
 
 @router.post("/submit-daily")
 async def submit_daily_data(
@@ -49,3 +55,39 @@ async def submit_daily_data(
     # Process the data (you can save it to a database or log it)
     print(f"Received hourly data: {timestamp}, {flow_rate}, {cod}, {water_quality}")
     return {"message": "Hourly data submitted successfully!"}
+
+@router.post("/submit-outfall")
+async def submit_outfall_data(
+    timestamp: str = Form(...),
+    safe_to_make_observation: bool = Form(...),
+    flotable_present: bool = Form(...),
+    scum_present: bool = Form(...),
+    foam_present: bool = Form(...),
+    oil_present: bool = Form(...),
+    operator: str = Form(...)
+):
+    try:
+        # Convert integer flags to boolean values
+        print(f"timestamp = {timestamp}")
+        data = {
+            "timestamp_entry_ISO": helpers.nowtime(),
+            "timestamp_intended_ISO": helpers.sanitize_time(timestamp),
+            "safe_to_make_observation": safe_to_make_observation,
+            "flotable_present": flotable_present,
+            "scum_present": scum_present,
+            "foam_present": foam_present,
+            "oil_present": oil_present,
+            "operator": operator,
+        }
+
+        # Save the data using the appropriate helper method
+        helpers.save_outfall_data(data)
+
+        # Log for debugging
+        print(f"Received outfall data: {data}")
+
+        return {"message": "Outfall data submitted successfully!"}
+
+    except Exception as e:
+        print(f"Error processing outfall data: {e}")
+        return {"error": str(e)}

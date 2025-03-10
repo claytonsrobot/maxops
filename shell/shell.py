@@ -150,16 +150,14 @@ class ShellApp(cmd2.Cmd):
 
     # === Command: Spoof Hourly Data ===
     spoof_hourly_parser = argparse.ArgumentParser(description="Spoof hourly data for testing.")
-    spoof_hourly_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00. It you use '-t now', or don't include one, the ISO timestamp for now will be generated. If you use '-t 13', the time will be submitted as today at 1 PM,  for example; this input must be an integrer.")
-    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate_MGD", type=float, help="Hourly influent flow.")
-    spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate_MGD", type=float, help="Hourly after-wet-well flow.")
-    spoof_hourly_parser.add_argument("-e","--effluent_flow_rate_MGD", type=float, help="Hourly effluent flow.")
-    #spoof_hourly_parser.add_argument("-r","--ras_flow_rate_MGD", type=float, help="Hourly RAS flow.") # calculated from entries in clarifier page
-    spoof_hourly_parser.add_argument("-w","--was_flow_rate_MGD", type=float, help="Hourly WAS flow.")
-    spoof_hourly_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
-    #spoof_hourly_parser.add_argument("-u","--underflow_rate_MGD", type=float, help="Hourly influent flow.") # calculated from entries in clarifier page
-    #spoof_hourly_parser.add_argument("-c","--cod", type=float, help="COD value.")
-    #spoof_hourly_parser.add_argument("-w","--water_quality", type=str, help="Water quality (e.g., excellent, good, fair).")
+    spoof_hourly_parser.add_argument("-t","--timestamp", type=str, default=None, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00. It you use '-t now', or don't include one, the ISO timestamp for now will be generated. If you use '-t 13', the time will be submitted as today at 1 PM,  for example; this input must be an integrer.")
+    spoof_hourly_parser.add_argument("-i","--inluent_flow_rate_MGD", type=float, default=None, help="Hourly influent flow.")
+    spoof_hourly_parser.add_argument("-a","--after_wet_well_flow_rate_MGD", type=float, default=None, help="Hourly after-wet-well flow.")
+    spoof_hourly_parser.add_argument("-e","--effluent_flow_rate_MGD", type=float, default=None, help="Hourly effluent flow.")
+    #spoof_hourly_parser.add_argument("-r","--ras_flow_rate_MGD", type=float, default=None, help="Hourly RAS flow.") # calculated from entries in clarifier page
+    spoof_hourly_parser.add_argument("-w","--was_flow_rate_MGD", type=float, default=None, help="Hourly WAS flow.")
+    spoof_hourly_parser.add_argument("-op","--operator", type=str, default=None, help="Operator indentifier.")
+    #spoof_hourly_parser.add_argument("-u","--underflow_rate_MGD", type=float, default=None, help="Hourly influent flow.") # calculated from entries in clarifier page
     """
     SAM says (three sheets in the hourly spreadsheet called Daily Data Spreashet (veriosn 1))
     
@@ -250,11 +248,11 @@ class ShellApp(cmd2.Cmd):
 
     # === Command: Spoof Daily Data ===
     spoof_daily_parser = argparse.ArgumentParser(description="Spoof daily data for testing.")
-    spoof_daily_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
-    #spoof_daily_parser.add_argument("-d","--date", type=str, help="Date in YYYY-MM-DD format.")
-    spoof_daily_parser.add_argument("-c","--clarifier_status", type=str, help="Clarifier status (e.g., operational, under maintenance).")
-    spoof_daily_parser.add_argument("-o","--observations", type=str, help="Daily observations.")
-    spoof_daily_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
+    spoof_daily_parser.add_argument("-t","--timestamp", type=str, default=None, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
+    #spoof_daily_parser.add_argument("-d","--date", type=str, default=None, help="Date in YYYY-MM-DD format.")
+    spoof_daily_parser.add_argument("-c","--clarifier_status", type=str, default=None, help="Clarifier status (e.g., operational, under maintenance).")
+    spoof_daily_parser.add_argument("-o","--observations", type=str, default=None, help="Daily observations.")
+    spoof_daily_parser.add_argument("-op","--operator", type=str, default=None, help="Operator indentifier.")
     @cmd2.with_argparser(spoof_daily_parser)
     def do_spoof_daily(self, args):
         """Spoof daily summary data and send it to the API."""
@@ -298,13 +296,13 @@ class ShellApp(cmd2.Cmd):
         "foam present",
         "oil present"])
     outfall_parser = argparse.ArgumentParser(description= "Outfall data entry.")
-    outfall_parser.add_argument("-t","--timestamp", type=str, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
-    outfall_parser.add_argument("-safe","--safe_to_make_observation", type=int, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-float","--flotable_present", type=int, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-scum","--scum_present", type=int, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-foam","--foam_present", type=int, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-oil","--oil_present", type=int, help="Outfall observation, yes[1] or no[0].")
-    outfall_parser.add_argument("-op","--operator", type=str, help="Operator indentifier.")
+    outfall_parser.add_argument("-t","--timestamp", type=str, default=None, help="Timestamp in ISO format, e.g., 2025-03-05T08:00:00")
+    outfall_parser.add_argument("-safe","--safe_to_make_observation", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-float","--flotable_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-scum","--scum_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-foam","--foam_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-oil","--oil_present", type=int, default=None, help="Outfall observation, yes[1] or no[0].")
+    outfall_parser.add_argument("-op","--operator", type=str, default=None, help="Operator indentifier.")
 
     @cmd2.with_argparser(outfall_parser)
     def do_spoof_outfall_daily(self,args):
@@ -348,7 +346,7 @@ class ShellApp(cmd2.Cmd):
 
         if data is not None:
             try:
-                response = requests.post("http://localhost:8000/submit-daily", data=data)
+                response = requests.post("http://localhost:8000/submit-outfall", data=data)
                 print(f"Server response: {response.json()}")
             except Exception as e:
                 print(f"Error spoofing daily data: {e}")
@@ -620,12 +618,10 @@ class ShellApp(cmd2.Cmd):
         else:
             self.perror(f"Variable '{var_name}' not found.")
 
-
     
-    def do_browsefiles(self,args):
-        import FreeSimpleGUI as sg
-        file_path = sg.popup_get_file("Select a filepath to assign to variable!")
-        return file_path
+    def do_gui(self,args):
+        from gui.gui import main
+        main() 
 
 
 if __name__ == "__main__":

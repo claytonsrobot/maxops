@@ -408,3 +408,26 @@ effluent_flow_rate_MGD = 88.0
 was_flow_rate_MGD = 2.0
 operator = "Henry Lee Clark"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T00:08:11"
+timestamp_intended_ISO = "2025-03-10T15:00:00"
+effluent_flow_rate_MGD = 63.0
+was_flow_rate_MGD = 1.5
+operator = "Clayton Bennett"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T00:08:34"
+timestamp_intended_ISO = "2025-03-10T15:00:00"
+effluent_flow_rate_MGD = 63.0
+was_flow_rate_MGD = 1.5
+operator = "Clayton Bennett"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T00:18:51"
+timestamp_intended_ISO = "2025-03-10T00:18:49"
+inluent_flow_rate_MGD = 0.0
+after_wet_well_flow_rate_MGD = 0.0
+effluent_flow_rate_MGD = 0.0
+was_flow_rate_MGD = 0.0
+operator = "Clayton Bennett"
+
