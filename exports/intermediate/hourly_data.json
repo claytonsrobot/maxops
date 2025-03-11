@@ -2,7 +2,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T00:24:49",
         "timestamp_intended_ISO": "2025-03-10T00:24:32",
-        "inluent_flow_rate_MGD": 99.0,
+        "influent_flow_rate_MGD": 99.0,
         "after_wet_well_flow_rate_MGD": 98.0,
         "effluent_flow_rate_MGD": 93.0,
         "was_flow_rate_MGD": 1.4,
@@ -12,7 +12,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T00:25:16",
         "timestamp_intended_ISO": "2025-03-10T04:00:00",
-        "inluent_flow_rate_MGD": 87.0,
+        "influent_flow_rate_MGD": 87.0,
         "after_wet_well_flow_rate_MGD": 86.0,
         "effluent_flow_rate_MGD": 84.0,
         "was_flow_rate_MGD": 1.5,
@@ -22,7 +22,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T01:19:18",
         "timestamp_intended_ISO": "2025-03-10T01:19:14",
-        "inluent_flow_rate_MGD": 0.0,
+        "influent_flow_rate_MGD": 0.0,
         "after_wet_well_flow_rate_MGD": 0.0,
         "effluent_flow_rate_MGD": 0.0,
         "was_flow_rate_MGD": 0.0,
@@ -32,7 +32,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T01:20:25",
         "timestamp_intended_ISO": "2025-03-10T01:20:23",
-        "inluent_flow_rate_MGD": 0.0,
+        "influent_flow_rate_MGD": 0.0,
         "after_wet_well_flow_rate_MGD": 0.0,
         "effluent_flow_rate_MGD": 0.0,
         "was_flow_rate_MGD": 0.0,
@@ -42,7 +42,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:32:41",
         "timestamp_intended_ISO": "2025-03-10T12:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 50.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -52,7 +52,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:34:34",
         "timestamp_intended_ISO": "2025-03-10T13:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 99.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -62,7 +62,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:36:43",
         "timestamp_intended_ISO": "2025-03-10T13:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 99.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -72,7 +72,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:36:53",
         "timestamp_intended_ISO": "2025-03-10T13:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 99.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -82,7 +82,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:38:36",
         "timestamp_intended_ISO": "2025-03-10T12:38:36",
-        "inluent_flow_rate_MGD": 67.0,
+        "influent_flow_rate_MGD": 67.0,
         "after_wet_well_flow_rate_MGD": 66.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -92,7 +92,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T12:38:41",
         "timestamp_intended_ISO": "2025-03-10T13:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 99.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -102,7 +102,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T13:05:24",
         "timestamp_intended_ISO": "2025-03-10T13:05:24",
-        "inluent_flow_rate_MGD": 67.0,
+        "influent_flow_rate_MGD": 67.0,
         "after_wet_well_flow_rate_MGD": 66.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -112,7 +112,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T13:05:28",
         "timestamp_intended_ISO": "2025-03-10T13:00:00",
-        "inluent_flow_rate_MGD": 100.0,
+        "influent_flow_rate_MGD": 100.0,
         "after_wet_well_flow_rate_MGD": 99.0,
         "effluent_flow_rate_MGD": 63.0,
         "was_flow_rate_MGD": 1.5,
@@ -122,7 +122,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T13:24:00",
         "timestamp_intended_ISO": "2025-03-10T14:00:00",
-        "inluent_flow_rate_MGD": 1.5,
+        "influent_flow_rate_MGD": 1.5,
         "after_wet_well_flow_rate_MGD": 2.0,
         "effluent_flow_rate_MGD": 1.8,
         "was_flow_rate_MGD": 0.5,
@@ -132,7 +132,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T13:24:00",
         "timestamp_intended_ISO": "2025-03-10T14:00:00",
-        "inluent_flow_rate_MGD": 1.5,
+        "influent_flow_rate_MGD": 1.5,
         "after_wet_well_flow_rate_MGD": 2.0,
         "effluent_flow_rate_MGD": 1.8,
         "was_flow_rate_MGD": 0.5,
@@ -142,7 +142,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T16:10:09",
         "timestamp_intended_ISO": "2025-03-10T16:09:00",
-        "inluent_flow_rate_MGD": 88.0,
+        "influent_flow_rate_MGD": 88.0,
         "after_wet_well_flow_rate_MGD": 87.0,
         "effluent_flow_rate_MGD": 86.0,
         "was_flow_rate_MGD": 1.0,
@@ -152,7 +152,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T16:11:09",
         "timestamp_intended_ISO": "2025-03-10T16:11:00",
-        "inluent_flow_rate_MGD": 1.0,
+        "influent_flow_rate_MGD": 1.0,
         "after_wet_well_flow_rate_MGD": 5.0,
         "effluent_flow_rate_MGD": 6.0,
         "was_flow_rate_MGD": 8.0,
@@ -162,7 +162,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T16:23:58",
         "timestamp_intended_ISO": "2025-03-10T15:23:00",
-        "inluent_flow_rate_MGD": 88.0,
+        "influent_flow_rate_MGD": 88.0,
         "after_wet_well_flow_rate_MGD": 87.0,
         "effluent_flow_rate_MGD": 82.0,
         "was_flow_rate_MGD": 1.0,
@@ -172,7 +172,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T16:24:33",
         "timestamp_intended_ISO": "2025-03-10T16:23:00",
-        "inluent_flow_rate_MGD": 88.0,
+        "influent_flow_rate_MGD": 88.0,
         "after_wet_well_flow_rate_MGD": 86.0,
         "effluent_flow_rate_MGD": 82.0,
         "was_flow_rate_MGD": 1.0,
@@ -182,7 +182,7 @@
     {
         "timestamp_entry_ISO": "2025-03-10T16:24:59",
         "timestamp_intended_ISO": "2025-03-10T16:24:41",
-        "inluent_flow_rate_MGD": null,
+        "influent_flow_rate_MGD": null,
         "after_wet_well_flow_rate_MGD": 98.0,
         "effluent_flow_rate_MGD": 91.0,
         "was_flow_rate_MGD": 3.0,
