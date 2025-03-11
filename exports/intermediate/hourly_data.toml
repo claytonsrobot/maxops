@@ -193,3 +193,141 @@ was_flow_rate_MGD = 0.0
 operator = "Clayton Bennett"
 source = "local-gui-Python-FreeSimpleGUI"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T07:30:14"
+timestamp_intended_ISO = "2025-03-11T07:29:57"
+after_wet_well_flow_rate_MGD = 97.0
+effluent_flow_rate_MGD = 67.0
+was_flow_rate_MGD = 1.0
+operator = "Clayton Bennett"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T07:45:27"
+timestamp_intended_ISO = "2025-03-11T07:45:14"
+after_wet_well_flow_rate_MGD = 98.0
+effluent_flow_rate_MGD = 91.0
+was_flow_rate_MGD = 1.0
+operator = "Clayton Bennett"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:10:37"
+timestamp_intended_ISO = "2025-03-11T10:08:00"
+influent_flow_rate_MGD = 0.1
+after_wet_well_flow_rate_MGD = 0.1
+effluent_flow_rate_MGD = 0.1
+was_flow_rate_MGD = 0.1
+operator = "Test"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:10:58"
+timestamp_intended_ISO = "2025-03-11T10:10:00"
+influent_flow_rate_MGD = 2.0
+after_wet_well_flow_rate_MGD = 2.0
+effluent_flow_rate_MGD = 2.0
+was_flow_rate_MGD = 2.0
+operator = "2"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:14:18"
+timestamp_intended_ISO = "2025-03-11T10:10:00"
+influent_flow_rate_MGD = 2.0
+after_wet_well_flow_rate_MGD = 2.0
+effluent_flow_rate_MGD = 2.0
+was_flow_rate_MGD = 2.0
+operator = "2"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T11:04:08"
+timestamp_intended_ISO = "2025-03-11T11:03:00"
+influent_flow_rate_MGD = 99.0
+after_wet_well_flow_rate_MGD = 99.0
+effluent_flow_rate_MGD = 99.0
+was_flow_rate_MGD = 99.0
+operator = "99"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T12:53:22"
+timestamp_intended_ISO = "2025-03-11T12:53:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T12:53:53"
+timestamp_intended_ISO = "2025-03-11T12:53:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T12:54:09"
+timestamp_intended_ISO = "2025-03-11T12:53:00"
+influent_flow_rate_MGD = 0.1
+after_wet_well_flow_rate_MGD = 0.1
+effluent_flow_rate_MGD = 0.1
+was_flow_rate_MGD = 0.1
+operator = "Kale Carmon"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T12:54:25"
+timestamp_intended_ISO = "2025-03-11T12:53:00"
+influent_flow_rate_MGD = 0.1
+after_wet_well_flow_rate_MGD = 0.1
+effluent_flow_rate_MGD = 0.1
+was_flow_rate_MGD = 0.1
+operator = "Kale Carmon"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T13:58:30"
+timestamp_intended_ISO = "2025-03-11T13:58:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:09:15"
+timestamp_intended_ISO = "2025-03-11T14:09:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:11:37"
+timestamp_intended_ISO = "2025-03-11T14:09:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:23:29"
+timestamp_intended_ISO = "2025-03-11T14:23:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:31:11"
+timestamp_intended_ISO = "2025-03-11T14:31:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:31:54"
+timestamp_intended_ISO = "2025-03-11T14:31:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:31:59"
+timestamp_intended_ISO = "2025-03-11T14:31:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:34:06"
+timestamp_intended_ISO = "2025-03-11T14:31:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:34:13"
+timestamp_intended_ISO = "2025-03-11T14:34:00"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T14:34:28"
+timestamp_intended_ISO = "2025-03-11T14:34:00"
+source = "web-post-Python-FastAPI"
+

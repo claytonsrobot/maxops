@@ -9,46 +9,82 @@
         <!-- Entry Timestamp -->
         
         <!-- Intended Timestamp -->
+        <p>
         <label for="timestamp_intended_ISO">Timestamp:</label>
         <input type="datetime-local" id="timestamp_intended_ISO" name="timestamp_intended_ISO" required><br>
-
+        <span>(The time that you select will be rounded down to the closest hour.)</span><br>
+        </p>
+        <br>
         
         <!-- Safe to Make Observation -->
-        <input type="hidden" name="safe_to_make_observation" value="false">
-        <label for="safe_to_make_observation">Safe to Make Observation:</label>
-        <input type="checkbox" id="safe_to_make_observation" name="safe_to_make_observation" value="true">
-        <span></span><br>
+        <p>
+            <!--input type="hidden" name="safe_to_make_observation" value="false"-->
+            <label for="safe_to_make_observation">Safe to Make Observation:</label>
+            <select id="safe_to_make_observation" name="safe_to_make_observation">
+            <option value="" disabled selected>Select:</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+            </select>
+        </p>
+        
 
         <!-- Floatable Present -->
-        <input type="hidden" name="floatable_present" value="false">
-        <label for="floatable_present">Floatable Present:</label>
-        <input type="checkbox" id="floatable_present" name="floatable_present" value="true">
-        <span></span><br>
+        <p>
+            <!--input type="hidden" name="floatable_present" value="false"-->
+            <label for="floatable_present">Floatable Present:</label>
+            <select id="floatable_present" name="floatable_present">
+            <option value="" disabled selected>Select:</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+            </select>
+        </p>
 
         <!-- Scum Present -->
-        <input type="hidden" name="scum_present" value="false">
-        <label for="scum_present">Scum Present:</label>
-        <input type="checkbox" id="scum_present" name="scum_present" value="true">
-        <span></span><br>
+        <p>
+            <!--input type="hidden" name="scum_present" value="false"-->
+            <label for="scum_present">Scum Present:</label>
+            <select id="scum_present" name="scum_present">
+            <option value="" disabled selected>Select:</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+            </select>
+        </p>
 
         <!-- Foam Present -->
-        <input type="hidden" name="foam_present" value="false">
-        <label for="foam_present">Foam Present:</label>
-        <input type="checkbox" id="foam_present" name="foam_present" value="true">
-        <span></span><br>
+        <p>
+            <!--input type="hidden" name="foam_present" value="false"-->
+            <label for="foam_present">Foam Present:</label>
+            <select id="foam_present" name="foam_present">
+            <option value="" disabled selected>Select:</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+            </select>
+        </p>
 
         <!-- Oil Present -->
-        <input type="hidden" name="oil_present" value="false">
+        <p>
+        <!--input type="hidden" name="oil_present" value="false"-->
         <label for="oil_present">Oil Present:</label>
-        <input type="checkbox" id="oil_present" name="oil_present" value="true">
-        <span></span><br>
+        <select id="oil_present" name="oil_present">
+        <option value="" disabled selected>Select:</option>
+        <option value="True">True</option>
+        <option value="False">False</option>
+        </select>
+        </p>
+        <br>
 
         <!-- Operator Name -->
+        <p>
         <label for="operator">Operator:</label>
         <input type="text" id="operator" name="operator" placeholder="Optional"><br>
+        </p>
+        <br>
 
         <!-- Submit Button -->
+        <p>
         <button type="submit" class="btn green">Submit</button>
-    </form>
+        </p>
+    </form> 
+    <p id="warning" style="color: red; display: none;">Please make each selection!</p>
 </div>
 {% endblock %}

@@ -9,7 +9,6 @@ import pprint
 from datetime import datetime
 import ast
 import operator
-import psutil
 import readline
 
 from shell.query import run_query  # Import the tutorial function
@@ -120,16 +119,6 @@ class ShellApp(cmd2.Cmd):
         except Exception as e:
             self.perror(f"Error saving command to history: {e}")
         return stop
-
-    # === Command: Test ===
-    def do_test(self,line):
-        "See CPU frequency."
-        self.poutput("Test command executed successfully!")
-        try:
-            cpu_freq = psutil.cpu_freq()
-            print("Current CPU Frequency:", round(cpu_freq.current),"hz, or so.") 
-        except:
-            pass
 
     # === Command: Entry ===
     def do_entry(self,args):

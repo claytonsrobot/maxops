@@ -210,6 +210,26 @@ async function submitOutfallData(event) {
     }
 }
 
+document.getElementById('outfallForm').addEventListener('submit', function(event) {
+    const dropdowns = document.querySelectorAll('select'); // Select all dropdowns in the form
+    const warning = document.getElementById('warning');
+    let allValid = true;
+
+    // Loop through all dropdowns to check validity
+    dropdowns.forEach((dropdown) => {
+        if (!dropdown.value) {
+            allValid = false; // If any dropdown is not valid, set flag to false
+        }
+    });
+
+    if (!allValid) {
+        event.preventDefault(); // Prevent form submission
+        warning.style.display = 'block'; // Show warning
+    } else {
+        warning.style.display = 'none'; // Hide warning if all are valid
+    }
+});
+    
 
 // Attach event listeners to forms and buttons
 //document.getElementById("hourlyForm").addEventListener("submit", submitHourlyData);

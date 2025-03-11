@@ -281,3 +281,112 @@ oil_present = true
 operator = "Batch Eval"
 source = "web-post-Python-FastAPI"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T07:12:34"
+timestamp_intended_ISO = "2025-03-11T05:12:00"
+safe_to_make_observation = false
+floatable_present = true
+scum_present = true
+foam_present = false
+oil_present = false
+operator = "stacy"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T07:29:55"
+timestamp_intended_ISO = "2025-03-11T07:29:50"
+safe_to_make_observation = true
+floatable_present = true
+scum_present = false
+foam_present = false
+oil_present = true
+operator = "Clayton Bennett"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T07:45:04"
+timestamp_intended_ISO = "2025-03-11T07:44:56"
+safe_to_make_observation = true
+floatable_present = true
+scum_present = true
+foam_present = true
+oil_present = true
+operator = "Clayton Bennett"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:19:50"
+timestamp_intended_ISO = "2025-03-11T10:19:00"
+safe_to_make_observation = false
+floatable_present = false
+scum_present = false
+foam_present = false
+oil_present = false
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:40:31"
+timestamp_intended_ISO = "2025-03-11T10:40:00"
+safe_to_make_observation = true
+floatable_present = false
+scum_present = true
+foam_present = false
+oil_present = true
+operator = "Don Hudgins"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:46:48"
+timestamp_intended_ISO = "2025-03-11T10:40:00"
+safe_to_make_observation = true
+floatable_present = false
+scum_present = true
+foam_present = false
+oil_present = true
+operator = "Don Hudgins"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:51:48"
+timestamp_intended_ISO = "2025-03-11T10:40:00"
+safe_to_make_observation = true
+floatable_present = false
+scum_present = true
+foam_present = false
+oil_present = true
+operator = "Don Hudgins"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:52:52"
+timestamp_intended_ISO = "2025-03-11T10:52:00"
+safe_to_make_observation = true
+floatable_present = true
+scum_present = true
+foam_present = true
+oil_present = true
+operator = "Don Hudgins"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T10:53:26"
+timestamp_intended_ISO = "2025-03-11T10:52:00"
+safe_to_make_observation = true
+floatable_present = true
+scum_present = true
+foam_present = true
+oil_present = true
+operator = "Don Hudgins"
+source = "web-post-Python-FastAPI"
+
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-11T11:06:52"
+timestamp_intended_ISO = "2025-03-11T08:06:00"
+safe_to_make_observation = true
+floatable_present = false
+scum_present = true
+foam_present = false
+oil_present = true
+operator = "Mike Durham"
+source = "web-post-Python-FastAPI"
+
