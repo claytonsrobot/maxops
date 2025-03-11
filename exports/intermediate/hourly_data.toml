@@ -183,3 +183,13 @@ was_flow_rate_MGD = 3.0
 operator = "Clayton Bennett"
 source = "web-post-Python-FastAPI"
 
+[[hourly_data]]
+timestamp_entry_ISO = "2025-03-10T20:40:14"
+timestamp_intended_ISO = "2025-03-10T20:40:10"
+influent_flow_rate_MGD = 0.0
+after_wet_well_flow_rate_MGD = 0.0
+effluent_flow_rate_MGD = 0.0
+was_flow_rate_MGD = 0.0
+operator = "Clayton Bennett"
+source = "local-gui-Python-FreeSimpleGUI"
+

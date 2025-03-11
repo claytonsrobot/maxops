@@ -162,7 +162,7 @@ floatable_present = true
 scum_present = true
 foam_present = true
 oil_present = false
-operator = "Your Mom"
+operator = "Mike Brower"
 source = "web-post-Python-FastAPI"
 
 [[hourly_data]]

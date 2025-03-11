@@ -33,3 +33,5 @@ timestamp_entry_ISO,timestamp_intended_ISO,influent_flow_rate_MGD,after_wet_well
 2025-03-10T16:24:33,2025-03-10T16:23:00,88.0,86.0,82.0,1.0,Clayton Bennett,web-post-Python-FastAPI
 timestamp_entry_ISO,timestamp_intended_ISO,influent_flow_rate_MGD,after_wet_well_flow_rate_MGD,effluent_flow_rate_MGD,was_flow_rate_MGD,operator,source
 2025-03-10T16:24:59,2025-03-10T16:24:41,,98.0,91.0,3.0,Clayton Bennett,web-post-Python-FastAPI
+timestamp_entry_ISO,timestamp_intended_ISO,influent_flow_rate_MGD,after_wet_well_flow_rate_MGD,effluent_flow_rate_MGD,was_flow_rate_MGD,operator,source
+2025-03-10T20:40:14,2025-03-10T20:40:10,0.0,0.0,0.0,0.0,Clayton Bennett,local-gui-Python-FreeSimpleGUI

@@ -31,7 +31,7 @@ async def submit_hourly_data(
     data = {
         "timestamp_entry_ISO": helpers.nowtime(),
         "timestamp_intended_ISO": helpers.sanitize_time(timestamp_intended_ISO),
-        "inluent_flow_rate_MGD": influent_flow_rate_MGD,
+        "influent_flow_rate_MGD": influent_flow_rate_MGD,
         "after_wet_well_flow_rate_MGD": after_wet_well_flow_rate_MGD,
         "effluent_flow_rate_MGD": effluent_flow_rate_MGD,
         "was_flow_rate_MGD": was_flow_rate_MGD,
